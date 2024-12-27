@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> spaces.js</title>
+  <title> spaces/display-p3.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>spaces.js</h1>
+                    <h1>spaces/display-p3.js</h1>
                 </header>
                 
 
@@ -85,63 +85,48 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { XYZ, XYZD50 } from "./spaces/xyz.js";
-import { OKLab, OKLCH, OKHSV, OKHSL } from "./spaces/oklab.js";
-import { sRGB, sRGBLinear, sRGBGamut } from "./spaces/srgb.js";
-import {
-  DisplayP3,
-  DisplayP3Linear,
-  DisplayP3Gamut,
-} from "./spaces/display-p3.js";
-import { Rec2020, Rec2020Linear, Rec2020Gamut } from "./spaces/rec2020.js";
-import { A98RGB, A98RGBLinear, A98RGBGamut } from "./spaces/a98-rgb.js";
-import { ProPhotoRGB, ProPhotoRGBLinear } from "./spaces/prophoto-rgb.js";
-
-export * from "./spaces/xyz.js";
-export * from "./spaces/oklab.js";
-export * from "./spaces/srgb.js";
-export * from "./spaces/display-p3.js";
-export * from "./spaces/rec2020.js";
-export * from "./spaces/a98-rgb.js";
-export * from "./spaces/prophoto-rgb.js";
+            <pre class="prettyprint source linenums"><code>import {
+  linear_DisplayP3_to_LMS_M,
+  linear_DisplayP3_to_XYZ_M,
+  LMS_to_linear_DisplayP3_M,
+  XYZ_to_linear_DisplayP3_M,
+  OKLab_to_linear_DisplayP3_coefficients,
+} from "../conversion_matrices.js";
+import { sRGBGammaToLinearVec3, sRGBLinearToGammaVec3 } from "./util.js";
 
 /**
- * Returns a list of color spaces.
- *
- * @method
- * @returns {ColorSpace[]} An array of color space objects.
- * @category core
+ * The Display-P3 color space in linear form, without a transfer function, aliased as &lt;code>"display-p3-linear"&lt;/code>.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorSpaces = () => {
-  return [
-    XYZ, // D65
-    XYZD50,
-    OKLab,
-    OKLCH,
-    OKHSV,
-    OKHSL,
-    sRGB,
-    sRGBLinear,
-    DisplayP3,
-    DisplayP3Linear,
-    Rec2020,
-    Rec2020Linear,
-    A98RGB,
-    A98RGBLinear,
-    ProPhotoRGB,
-    ProPhotoRGBLinear,
-  ];
+export const DisplayP3Linear = {
+  id: "display-p3-linear",
+  toXYZ_M: linear_DisplayP3_to_XYZ_M,
+  fromXYZ_M: XYZ_to_linear_DisplayP3_M,
+  toLMS_M: linear_DisplayP3_to_LMS_M,
+  fromLMS_M: LMS_to_linear_DisplayP3_M,
 };
 
 /**
- * Returns a list of color gamuts.
- *
- * @method
- * @returns {ColorGamut[]} An array of color gamut objects.
- * @category core
+ * The Display-P3 color space, with a transfer function, aliased as &lt;code>"display-p3"&lt;/code>. Inherits from the {@link DisplayP3Linear} color space.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorGamuts = () => {
-  return [sRGBGamut, DisplayP3Gamut, Rec2020Gamut, A98RGBGamut];
+export const DisplayP3 = {
+  id: "display-p3",
+  base: DisplayP3Linear,
+  toBase: sRGBGammaToLinearVec3,
+  fromBase: sRGBLinearToGammaVec3,
+};
+
+/**
+ * A color gamut for the {@link DisplayP3} color space.
+ * @type {ColorGamut}
+ * @category gamuts
+ */
+export const DisplayP3Gamut = {
+  space: DisplayP3,
+  coefficients: OKLab_to_linear_DisplayP3_coefficients,
 };
 </code></pre>
         </article>

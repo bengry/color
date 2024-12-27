@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> spaces.js</title>
+  <title> spaces/oklab.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>spaces.js</h1>
+                    <h1>spaces/oklab.js</h1>
                 </header>
                 
 
@@ -85,63 +85,99 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { XYZ, XYZD50 } from "./spaces/xyz.js";
-import { OKLab, OKLCH, OKHSV, OKHSL } from "./spaces/oklab.js";
-import { sRGB, sRGBLinear, sRGBGamut } from "./spaces/srgb.js";
-import {
-  DisplayP3,
-  DisplayP3Linear,
-  DisplayP3Gamut,
-} from "./spaces/display-p3.js";
-import { Rec2020, Rec2020Linear, Rec2020Gamut } from "./spaces/rec2020.js";
-import { A98RGB, A98RGBLinear, A98RGBGamut } from "./spaces/a98-rgb.js";
-import { ProPhotoRGB, ProPhotoRGBLinear } from "./spaces/prophoto-rgb.js";
+            <pre class="prettyprint source linenums"><code>// Oklab and related spaces: OKLCH, OKHSV(sRGB), OKHSL(sRGB)
 
-export * from "./spaces/xyz.js";
-export * from "./spaces/oklab.js";
-export * from "./spaces/srgb.js";
-export * from "./spaces/display-p3.js";
-export * from "./spaces/rec2020.js";
-export * from "./spaces/a98-rgb.js";
-export * from "./spaces/prophoto-rgb.js";
+import { constrainAngle, vec3 } from "../util.js";
+import {
+  OKHSLToOKLab,
+  OKHSVToOKLab,
+  OKLabToOKHSL,
+  OKLabToOKHSV,
+} from "../okhsl.js";
+
+import { sRGBGamut } from "./srgb.js";
+
+// based on colorjs.io, could perhaps use a more specific number than this
+const ACHROMATIC_EPSILON = (0.4 - 0.0) / 100000;
 
 /**
- * Returns a list of color spaces.
- *
- * @method
- * @returns {ColorSpace[]} An array of color space objects.
- * @category core
+ * The OKLab color space.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorSpaces = () => {
-  return [
-    XYZ, // D65
-    XYZD50,
-    OKLab,
-    OKLCH,
-    OKHSV,
-    OKHSL,
-    sRGB,
-    sRGBLinear,
-    DisplayP3,
-    DisplayP3Linear,
-    Rec2020,
-    Rec2020Linear,
-    A98RGB,
-    A98RGBLinear,
-    ProPhotoRGB,
-    ProPhotoRGBLinear,
-  ];
+export const OKLab = {
+  id: "oklab",
 };
 
 /**
- * Returns a list of color gamuts.
- *
- * @method
- * @returns {ColorGamut[]} An array of color gamut objects.
- * @category core
+ * The OKLCH color space, with Lightness, Chroma, and Hue components. This is the cylindrical form of the {@link OKLab} color space.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorGamuts = () => {
-  return [sRGBGamut, DisplayP3Gamut, Rec2020Gamut, A98RGBGamut];
+export const OKLCH = {
+  id: "oklch",
+  base: OKLab,
+  toBase: (oklch, out = vec3()) => {
+    // Note: newer version of Colorjs.io clamps oklch chroma
+    // However, this means that oklch(0.5, -0.36, 90) -> srgb will result in an in-gamut rgb
+    // which seems a bit odd; you'd expect it to be out of gamut. So we will leave
+    // chroma unclamped for this conversion.
+    // const C = Math.max(0, oklch[1]);
+
+    const C = oklch[1];
+    const H = oklch[2];
+    out[0] = oklch[0]; // L remains the same
+    out[1] = C * Math.cos((H * Math.PI) / 180); // a
+    out[2] = C * Math.sin((H * Math.PI) / 180); // b
+    return out;
+  },
+  fromBase: (oklab, out = vec3()) => {
+    // These methods are used for other polar forms as well, so we can't hardcode the ε
+    const a = oklab[1];
+    const b = oklab[2];
+    let isAchromatic =
+      Math.abs(a) &lt; ACHROMATIC_EPSILON &amp;&amp; Math.abs(b) &lt; ACHROMATIC_EPSILON;
+    let hue = isAchromatic
+      ? 0
+      : constrainAngle((Math.atan2(b, a) * 180) / Math.PI);
+    let C = isAchromatic ? 0 : Math.sqrt(a * a + b * b);
+    out[0] = oklab[0]; // L remains the same
+    out[1] = C; // Chroma
+    out[2] = hue; // Hue, in degrees [0 to 360)
+    return out;
+  },
+};
+
+/**
+ * An implementation of the OKHSL color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+ * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+ * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+ * @type {ColorSpace}
+ * @category spaces
+ */
+export const OKHSL = {
+  // Note: sRGB gamut only
+  // For other gamuts, use okhsl method directly
+  id: "okhsl",
+  base: OKLab,
+  toBase: (okhsl, out = vec3()) => OKHSLToOKLab(okhsl, sRGBGamut, out),
+  fromBase: (oklab, out = vec3()) => OKLabToOKHSL(oklab, sRGBGamut, out),
+};
+
+/**
+ * An implementation of the OKHSV color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+ * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+ * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+ * @type {ColorSpace}
+ * @category spaces
+ */
+export const OKHSV = {
+  // Note: sRGB gamut only
+  // For other gamuts, use okhsv method directly
+  id: "okhsv",
+  base: OKLab,
+  toBase: (okhsl, out = vec3()) => OKHSVToOKLab(okhsl, sRGBGamut, out),
+  fromBase: (oklab, out = vec3()) => OKLabToOKHSV(oklab, sRGBGamut, out),
 };
 </code></pre>
         </article>

@@ -19,6 +19,11 @@ const A98RGBToGamma = (val) => {
   return sign * Math.pow(abs, 256 / 563);
 };
 
+/**
+ * The Adobe RGB (1998) color space in linear form, without a transfer function, aliased as <code>"a98-rgb-linear"</code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const A98RGBLinear = {
   id: "a98-rgb-linear",
   toXYZ_M: linear_A98RGB_to_XYZ_M,
@@ -27,6 +32,11 @@ export const A98RGBLinear = {
   fromLMS_M: LMS_to_linear_A98RGB_M,
 };
 
+/**
+ * The Adobe RGB (1998) color space, with a transfer function, aliased as <code>"a98-rgb"</code>. Inherits from the {@link A98RGBLinear} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const A98RGB = {
   id: "a98-rgb",
   base: A98RGBLinear,
@@ -44,6 +54,11 @@ export const A98RGB = {
   },
 };
 
+/**
+ * A color gamut for the {@link A98RGB}, or Adobe RGB (1998), color space.
+ * @type {ColorGamut}
+ * @category gamuts
+ */
 export const A98RGBGamut = {
   space: A98RGB,
   coefficients: OKLab_to_linear_A98RGB_coefficients,

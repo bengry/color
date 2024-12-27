@@ -53,7 +53,7 @@ export const constrainAngle = (angle) => ((angle % 360) + 360) % 360;
  * @param {string} str The hex color string.
  * @param {Vector} [out=vec3()] The output array.
  * @returns {Vector} The RGB array.
- * @category utils
+ * @category rgb
  */
 export const hexToRGB = (str, out = vec3()) => {
   let hex = str.replace(/#/, "");
@@ -76,7 +76,7 @@ export const hexToRGB = (str, out = vec3()) => {
  * @method
  * @param {Vector} rgb The RGB array.
  * @returns {string} The hex color string.
- * @category utils
+ * @category rgb
  */
 export const RGBToHex = (rgb) =>
   `#${rgb.map((n) => floatToByte(n).toString(16).padStart(2, "0")).join("")}`;
@@ -84,7 +84,7 @@ export const RGBToHex = (rgb) =>
 /**
  * @method
  * @deprecated Use RGBToHex instead.
- * @category utils
+ * @category rgb
  */
 export const RGBtoHex = RGBToHex;
 
@@ -94,7 +94,7 @@ export const RGBtoHex = RGBToHex;
  * @param {Vector} lrgb The linear RGB array.
  * @param {number} [ep=GAMUT_EPSILON] The epsilon value for comparison.
  * @returns {boolean} True if the color is within the gamut, false otherwise.
- * @category utils
+ * @category rgb
  */
 export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
   const r = lrgb[0];
@@ -116,7 +116,7 @@ export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
  * @param {Vector} rgb The RGB array.
  * @param {Vector} [out=vec3()] The output array.
  * @returns {Vector} The clamped RGB array.
- * @category utils
+ * @category rgb
  */
 export const clampedRGB = (rgb, out = vec3()) => {
   out[0] = clamp(rgb[0], 0, 1);
@@ -131,7 +131,7 @@ export const clampedRGB = (rgb, out = vec3()) => {
  * @param {Vector} arg The xyY array.
  * @param {Vector} [out=vec3()] The output array.
  * @returns {Vector} The XYZ array.
- * @category utils
+ * @category xyz
  */
 export const xyY_to_XYZ = (arg, out = vec3()) => {
   let X, Y, Z, x, y;
@@ -156,7 +156,7 @@ export const xyY_to_XYZ = (arg, out = vec3()) => {
  * @param {Vector} arg The XYZ array.
  * @param {Vector} [out=vec3()] The output array.
  * @returns {Vector} The xyY array.
- * @category utils
+ * @category xyz
  */
 export const XYZ_to_xyY = (arg, out = vec3()) => {
   let sum, X, Y, Z;

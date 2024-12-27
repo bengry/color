@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> spaces.js</title>
+  <title> spaces/a98-rgb.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>spaces.js</h1>
+                    <h1>spaces/a98-rgb.js</h1>
                 </header>
                 
 
@@ -85,63 +85,70 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { XYZ, XYZD50 } from "./spaces/xyz.js";
-import { OKLab, OKLCH, OKHSV, OKHSL } from "./spaces/oklab.js";
-import { sRGB, sRGBLinear, sRGBGamut } from "./spaces/srgb.js";
+            <pre class="prettyprint source linenums"><code>import { vec3 } from "../util.js";
 import {
-  DisplayP3,
-  DisplayP3Linear,
-  DisplayP3Gamut,
-} from "./spaces/display-p3.js";
-import { Rec2020, Rec2020Linear, Rec2020Gamut } from "./spaces/rec2020.js";
-import { A98RGB, A98RGBLinear, A98RGBGamut } from "./spaces/a98-rgb.js";
-import { ProPhotoRGB, ProPhotoRGBLinear } from "./spaces/prophoto-rgb.js";
+  linear_A98RGB_to_XYZ_M,
+  XYZ_to_linear_A98RGB_M,
+  linear_A98RGB_to_LMS_M,
+  LMS_to_linear_A98RGB_M,
+  OKLab_to_linear_A98RGB_coefficients,
+} from "../conversion_matrices.js";
 
-export * from "./spaces/xyz.js";
-export * from "./spaces/oklab.js";
-export * from "./spaces/srgb.js";
-export * from "./spaces/display-p3.js";
-export * from "./spaces/rec2020.js";
-export * from "./spaces/a98-rgb.js";
-export * from "./spaces/prophoto-rgb.js";
+const A98RGBToLinear = (val) => {
+  let sign = val &lt; 0 ? -1 : 1;
+  let abs = Math.abs(val);
+  return sign * Math.pow(abs, 563 / 256);
+};
 
-/**
- * Returns a list of color spaces.
- *
- * @method
- * @returns {ColorSpace[]} An array of color space objects.
- * @category core
- */
-export const listColorSpaces = () => {
-  return [
-    XYZ, // D65
-    XYZD50,
-    OKLab,
-    OKLCH,
-    OKHSV,
-    OKHSL,
-    sRGB,
-    sRGBLinear,
-    DisplayP3,
-    DisplayP3Linear,
-    Rec2020,
-    Rec2020Linear,
-    A98RGB,
-    A98RGBLinear,
-    ProPhotoRGB,
-    ProPhotoRGBLinear,
-  ];
+const A98RGBToGamma = (val) => {
+  let sign = val &lt; 0 ? -1 : 1;
+  let abs = Math.abs(val);
+  return sign * Math.pow(abs, 256 / 563);
 };
 
 /**
- * Returns a list of color gamuts.
- *
- * @method
- * @returns {ColorGamut[]} An array of color gamut objects.
- * @category core
+ * The Adobe RGB (1998) color space in linear form, without a transfer function, aliased as &lt;code>"a98-rgb-linear"&lt;/code>.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorGamuts = () => {
-  return [sRGBGamut, DisplayP3Gamut, Rec2020Gamut, A98RGBGamut];
+export const A98RGBLinear = {
+  id: "a98-rgb-linear",
+  toXYZ_M: linear_A98RGB_to_XYZ_M,
+  fromXYZ_M: XYZ_to_linear_A98RGB_M,
+  toLMS_M: linear_A98RGB_to_LMS_M,
+  fromLMS_M: LMS_to_linear_A98RGB_M,
+};
+
+/**
+ * The Adobe RGB (1998) color space, with a transfer function, aliased as &lt;code>"a98-rgb"&lt;/code>. Inherits from the {@link A98RGBLinear} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
+export const A98RGB = {
+  id: "a98-rgb",
+  base: A98RGBLinear,
+  toBase: (vec, out = vec3()) => {
+    out[0] = A98RGBToLinear(vec[0]);
+    out[1] = A98RGBToLinear(vec[1]);
+    out[2] = A98RGBToLinear(vec[2]);
+    return out;
+  },
+  fromBase: (vec, out = vec3()) => {
+    out[0] = A98RGBToGamma(vec[0]);
+    out[1] = A98RGBToGamma(vec[1]);
+    out[2] = A98RGBToGamma(vec[2]);
+    return out;
+  },
+};
+
+/**
+ * A color gamut for the {@link A98RGB}, or Adobe RGB (1998), color space.
+ * @type {ColorGamut}
+ * @category gamuts
+ */
+export const A98RGBGamut = {
+  space: A98RGB,
+  coefficients: OKLab_to_linear_A98RGB_coefficients,
 };
 </code></pre>
         </article>

@@ -13,10 +13,20 @@ import { sRGBGamut } from "./srgb.js";
 // based on colorjs.io, could perhaps use a more specific number than this
 const ACHROMATIC_EPSILON = (0.4 - 0.0) / 100000;
 
+/**
+ * The OKLab color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const OKLab = {
   id: "oklab",
 };
 
+/**
+ * The OKLCH color space, with Lightness, Chroma, and Hue components. This is the cylindrical form of the {@link OKLab} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const OKLCH = {
   id: "oklch",
   base: OKLab,
@@ -51,6 +61,13 @@ export const OKLCH = {
   },
 };
 
+/**
+ * An implementation of the OKHSL color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+ * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+ * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const OKHSL = {
   // Note: sRGB gamut only
   // For other gamuts, use okhsl method directly
@@ -60,6 +77,13 @@ export const OKHSL = {
   fromBase: (oklab, out = vec3()) => OKLabToOKHSL(oklab, sRGBGamut, out),
 };
 
+/**
+ * An implementation of the OKHSV color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+ * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+ * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const OKHSV = {
   // Note: sRGB gamut only
   // For other gamuts, use okhsv method directly

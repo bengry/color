@@ -35,6 +35,11 @@ const ProPhotoRGBToGamma = (v) => (v >= Et ? v ** (1 / 1.8) : 16 * v);
 //   return abs >= Et ? sign * Math.pow(abs, 1 / 1.8) : 16 * val;
 // };
 
+/**
+ * The ProPhotoRGB color space in linear form, without a transfer function, aliased as <code>"prophoto-rgb-linear"</code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const ProPhotoRGBLinear = {
   id: "prophoto-rgb-linear",
   adapt: {
@@ -47,6 +52,11 @@ export const ProPhotoRGBLinear = {
   fromXYZ_M: XYZ_to_linear_ProPhotoRGB_M,
 };
 
+/**
+ * The ProPhotoRGB color space, with a transfer function, aliased as <code>"prophoto-rgb"</code>. Inherits from the {@link ProPhotoRGBLinear} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const ProPhotoRGB = {
   id: "prophoto-rgb",
   base: ProPhotoRGBLinear,

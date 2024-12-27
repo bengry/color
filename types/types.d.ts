@@ -111,18 +111,75 @@ declare function deltaEOK(oklab1: Vector, oklab2: Vector): number;
 /**
  * A function that maps an OKLCH color to a lightness value.
  * @param oklch - The input OKLCH color
+ * @param cusp - A 2D cusp point in the form [L, C]
  */
-declare type GamutMapping = (oklch: Vector) => void;
+declare type GamutMapMethod = (oklch: Vector, cusp: number[]) => void;
 
 /**
- * MapToL a {@link GamutMapping} function that maintains the color's Lightness.
+ * A {@link GamutMapMethod} that maintains the color's lightness.
  */
-declare const MapToL: GamutMapping;
+declare const MapToL: GamutMapMethod;
 
 /**
- * Takes any OKLCH value and maps it to fall within the given gamut.
+ * A {@link GamutMapMethod} that maps towards middle gray (L = 0.5).
  */
-declare function gamutMapOKLCH(): void;
+declare const MapToGray: GamutMapMethod;
+
+/**
+ * A {@link GamutMapMethod} that maps towards the lightness of the current hue's cusp.
+ */
+declare const MapToCuspL: GamutMapMethod;
+
+/**
+ * A {@link GamutMapMethod} that adaptively maps towards gray.
+ */
+declare const MapToAdaptiveGray: GamutMapMethod;
+
+/**
+ * A {@link GamutMapMethod} that adaptively maps towards the cusp's lightness.
+ */
+declare const MapToAdaptiveCuspL: GamutMapMethod;
+
+/**
+ * Computes the maximum saturation (S = C/L) possible for a given hue that fits within
+ * the RGB gamut, using the given coefficients.
+ * @param a - The normalized a component of the hue.
+ * @param b - The normalized b component of the hue.
+ * @param lmsToRgb - The LMS to RGB conversion matrix.
+ * @param okCoeff - The OKLab coefficients.
+ * @returns The maximum saturation.
+ */
+declare function computeMaxSaturationOKLC(a: number, b: number, lmsToRgb: number[][], okCoeff: number[][][]): number;
+
+/**
+ * Retrieves the LMS to RGB conversion matrix from the given gamut.
+ * @param gamut - The gamut object.
+ * @returns The LMS to RGB conversion matrix.
+ */
+declare function getGamutLMStoRGB(gamut: ColorGamut): Matrix3x3;
+
+/**
+ * Finds the cusp of the OKLCH color space for a given hue.
+ * @param a - The normalized a component of the hue.
+ * @param b - The normalized b component of the hue.
+ * @param gamut - The gamut object.
+ * @param [out = [0, 0]] - The output array to store the cusp values.
+ * @returns The cusp values [L, C].
+ */
+declare function findCuspOKLCH(a: number, b: number, gamut: ColorGamut, out?: number[]): number[];
+
+/**
+ * Applies fast approximate gamut mapping in OKLab space on the given OKLCH input color,
+ * using the specified gamut and converting to the target color space.
+ * @param oklch - The input OKLCH color that you wish to gamut map.
+ * @param [gamut = sRGBGamut] - The gamut object.
+ * @param [targetSpace = gamut.space] - The target color space.
+ * @param [out = vec3()] - The output array to store the mapped color.
+ * @param [mapping = MapToCuspL] - The gamut mapping function.
+ * @param [cusp] - Optional, you can provide the cusp values [L, C] to avoid re-computing them.
+ * @returns The mapped color in the target color space.
+ */
+declare function gamutMapOKLCH(oklch: Vector, gamut?: ColorGamut, targetSpace?: ColorSpace, out?: Vector, mapping?: GamutMapMethod, cusp?: Vector): Vector;
 
 /**
  * Converts OKHSL color to OKLab color.
@@ -289,4 +346,138 @@ declare function deltaAngle(a0: number, a1: number): number;
  * @returns The interpolated angle in degrees.
  */
 declare function lerpAngle(a0: number, a1: number, t: number): number;
+
+/**
+ * The Adobe RGB (1998) color space in linear form, without a transfer function, aliased as <code>"a98-rgb-linear"</code>.
+ */
+declare const A98RGBLinear: ColorSpace;
+
+/**
+ * The Adobe RGB (1998) color space, with a transfer function, aliased as <code>"a98-rgb"</code>. Inherits from the {@link A98RGBLinear} color space.
+ */
+declare const A98RGB: ColorSpace;
+
+/**
+ * A color gamut for the {@link A98RGB}, or Adobe RGB (1998), color space.
+ */
+declare const A98RGBGamut: ColorGamut;
+
+/**
+ * The Display-P3 color space in linear form, without a transfer function, aliased as <code>"display-p3-linear"</code>.
+ */
+declare const DisplayP3Linear: ColorSpace;
+
+/**
+ * The Display-P3 color space, with a transfer function, aliased as <code>"display-p3"</code>. Inherits from the {@link DisplayP3Linear} color space.
+ */
+declare const DisplayP3: ColorSpace;
+
+/**
+ * A color gamut for the {@link DisplayP3} color space.
+ */
+declare const DisplayP3Gamut: ColorGamut;
+
+/**
+ * The OKLab color space.
+ */
+declare const OKLab: ColorSpace;
+
+/**
+ * The OKLCH color space, with Lightness, Chroma, and Hue components. This is the cylindrical form of the {@link OKLab} color space.
+ */
+declare const OKLCH: ColorSpace;
+
+/**
+ * An implementation of the OKHSL color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+ * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+ * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+ */
+declare const OKHSL: ColorSpace;
+
+/**
+ * An implementation of the OKHSV color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+ * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+ * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+ */
+declare const OKHSV: ColorSpace;
+
+/**
+ * The ProPhotoRGB color space in linear form, without a transfer function, aliased as <code>"prophoto-rgb-linear"</code>.
+ */
+declare const ProPhotoRGBLinear: ColorSpace;
+
+/**
+ * The ProPhotoRGB color space, with a transfer function, aliased as <code>"prophoto-rgb"</code>. Inherits from the {@link ProPhotoRGBLinear} color space.
+ */
+declare const ProPhotoRGB: ColorSpace;
+
+/**
+ * The Rec2020 color space in linear form, without a transfer function, aliased as <code>"rec2020-linear"</code>.
+ */
+declare const Rec2020Linear: ColorSpace;
+
+/**
+ * The Rec2020 color space, with a transfer function, aliased as <code>"rec2020"</code>. Inherits from the {@link Rec2020Linear} color space.
+ */
+declare const Rec2020: ColorSpace;
+
+/**
+ * A color gamut for the {@link Rec2020} color space.
+ */
+declare const Rec2020Gamut: ColorGamut;
+
+/**
+ * The sRGB color space in linear form, without a transfer function, aliased as <code>"srgb-linear"</code>.
+ */
+declare const sRGBLinear: ColorSpace;
+
+/**
+ * The sRGB color space, with a transfer function, aliased as <code>"srgb"</code>. Inherits from the {@link sRGBLinear} color space.
+ */
+declare const sRGB: ColorSpace;
+
+/**
+ * A color gamut for the {@link sRGB} color space.
+ */
+declare const sRGBGamut: ColorGamut;
+
+/**
+ * Converts a single sRGB gamma-corrected channel value to linear light (un-companded) form.
+ * @param val - The sRGB gamma-corrected channel value in the range [0, 1].
+ * @returns The linear light channel value.
+ */
+declare function sRGBGammaToLinear(val: number): number;
+
+/**
+ * Converts a single linear-light channel value to sRGB gamma-corrected form.
+ * @param val - The linear-light channel value in the range [0, 1].
+ * @returns The sRGB gamma-corrected channel value.
+ */
+declare function sRGBLinearToGamma(val: number): number;
+
+/**
+ * Converts a color from XYZ with D65 whitepoint to XYZ with D50 whitepoint.
+ * @param XYZ - The input color in XYZ with D65 whitepoint.
+ * @param [out = vec3()] - The output color in XYZ with D50 whitepoint.
+ * @returns The converted color in XYZ with D50 whitepoint.
+ */
+declare function XYZD65ToD50(XYZ: Vector, out?: Vector): Vector;
+
+/**
+ * Converts a color from XYZ with D50 whitepoint to XYZ with D65 whitepoint.
+ * @param XYZ - The input color in XYZ with D50 whitepoint.
+ * @param [out = vec3()] - The output color in XYZ with D65 whitepoint.
+ * @returns The converted color in XYZ with D65 whitepoint.
+ */
+declare function XYZD50ToD65(XYZ: Vector, out?: Vector): Vector;
+
+/**
+ * XYZ color space with D65 whitepoint, aliased as <code>"xyz"</code>.
+ */
+declare const XYZ: ColorSpace;
+
+/**
+ * XYZ color space with D50 whitepoint, aliased as <code>"xyz-d50"</code>.
+ */
+declare const XYZD50: ColorSpace;
 

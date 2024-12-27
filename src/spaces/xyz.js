@@ -28,20 +28,44 @@ export const D50_to_D65_M = [
   [0.012314014864481998, -0.020507649298898964, 1.330365926242124],
 ];
 
+/**
+ * Converts a color from XYZ with D65 whitepoint to XYZ with D50 whitepoint.
+ * @method
+ * @category xyz
+ * @param {Vector} XYZ - The input color in XYZ with D65 whitepoint.
+ * @param {Vector} [out=vec3()] - The output color in XYZ with D50 whitepoint.
+ * @returns {Vector} The converted color in XYZ with D50 whitepoint.
+ */
 export const XYZD65ToD50 = (XYZ, out = vec3()) =>
   transform(XYZ, D65_to_D50_M, out);
 
+/**
+ * Converts a color from XYZ with D50 whitepoint to XYZ with D65 whitepoint.
+ * @method
+ * @category xyz
+ * @param {Vector} XYZ - The input color in XYZ with D50 whitepoint.
+ * @param {Vector} [out=vec3()] - The output color in XYZ with D65 whitepoint.
+ * @returns {Vector} The converted color in XYZ with D65 whitepoint.
+ */
 export const XYZD50ToD65 = (XYZ, out = vec3()) =>
   transform(XYZ, D50_to_D65_M, out);
 
-// XYZ using D65 whitepoint
+/**
+ * XYZ color space with D65 whitepoint, aliased as <code>"xyz"</code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const XYZ = {
   id: "xyz", // xyz-d65
   toLMS_M: XYZ_to_LMS_M,
   fromLMS_M: LMS_to_XYZ_M,
 };
 
-// XYZ using D50 whitepoint
+/**
+ * XYZ color space with D50 whitepoint, aliased as <code>"xyz-d50"</code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const XYZD50 = {
   id: "xyz-d50",
   base: XYZ,

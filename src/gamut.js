@@ -13,30 +13,35 @@ import { OKLab_to, convert } from "./core.js";
 const DEFAULT_ALPHA = 0.05;
 
 /**
- * @typedef {function} GamutMapping
+ * @typedef {function} GamutMapMethod
  * @description A function that maps an OKLCH color to a lightness value.
  * @param {Vector} oklch The input OKLCH color
  * @param {number[]} cusp A 2D cusp point in the form [L, C]
+ * @category mapping
  */
 
 /**
- * A {@link GamutMapping} function that maintains the color's lightness.
- * @type {GamutMapping}
+ * A {@link GamutMapMethod} that maintains the color's lightness.
+ * @type {GamutMapMethod}
+ * @category mapping
  */
 export const MapToL = (oklch) => oklch[0];
 /**
- * A {@link GamutMapping} function that maps towards middle gray (L = 0.5).
- * @type {GamutMapping}
+ * A {@link GamutMapMethod} that maps towards middle gray (L = 0.5).
+ * @type {GamutMapMethod}
+ * @category mapping
  */
 export const MapToGray = () => 0.5;
 /**
- * A {@link GamutMapping} function that maps towards the lightness of the current hue's cusp.
- * @type {GamutMapping}
+ * A {@link GamutMapMethod} that maps towards the lightness of the current hue's cusp.
+ * @type {GamutMapMethod}
+ * @category mapping
  */
 export const MapToCuspL = (_, cusp) => cusp[0];
 /**
- * A {@link GamutMapping} function that adaptively maps towards gray.
- * @type {GamutMapping}
+ * A {@link GamutMapMethod} that adaptively maps towards gray.
+ * @type {GamutMapMethod}
+ * @category mapping
  */
 export const MapToAdaptiveGray = (oklch, cusp) => {
   const Ld = oklch[0] - cusp[0];
@@ -48,8 +53,9 @@ export const MapToAdaptiveGray = (oklch, cusp) => {
   );
 };
 /**
- * A {@link GamutMapping} function that adaptively maps towards the cusp's lightness.
- * @type {GamutMapping}
+ * A {@link GamutMapMethod} that adaptively maps towards the cusp's lightness.
+ * @type {GamutMapMethod}
+ * @category mapping
  */
 export const MapToAdaptiveCuspL = (oklch) => {
   const Ld = oklch[0] - 0.5;
@@ -81,6 +87,17 @@ const setYZ = (v, a, b) => {
   v[2] = b;
 };
 
+/**
+ * Computes the maximum saturation (S = C/L) possible for a given hue that fits within
+ * the RGB gamut, using the given coefficients.
+ * @param {number} a The normalized a component of the hue.
+ * @param {number} b The normalized b component of the hue.
+ * @param {number[][]} lmsToRgb The LMS to RGB conversion matrix.
+ * @param {number[][][]} okCoeff The OKLab coefficients.
+ * @returns {number} The maximum saturation.
+ * @method
+ * @category mapping
+ */
 export const computeMaxSaturationOKLC = (a, b, lmsToRgb, okCoeff) => {
   // https://github.com/color-js/color.js/blob/main/src/spaces/okhsl.js
   // Finds the maximum saturation possible for a given hue that fits in RGB.
@@ -158,6 +175,13 @@ export const computeMaxSaturationOKLC = (a, b, lmsToRgb, okCoeff) => {
   return sat;
 };
 
+/**
+ * Retrieves the LMS to RGB conversion matrix from the given gamut.
+ * @param {ColorGamut} gamut The gamut object.
+ * @returns {Matrix3x3} The LMS to RGB conversion matrix.
+ * @method
+ * @category mapping
+ */
 export const getGamutLMStoRGB = (gamut) => {
   if (!gamut) throw new Error(`expected gamut to have { space }`);
   const lmsToRGB = (gamut.space.base ?? gamut.space).fromLMS_M;
@@ -166,6 +190,16 @@ export const getGamutLMStoRGB = (gamut) => {
   return lmsToRGB;
 };
 
+/**
+ * Finds the cusp of the OKLCH color space for a given hue.
+ * @param {number} a The normalized a component of the hue.
+ * @param {number} b The normalized b component of the hue.
+ * @param {ColorGamut} gamut The gamut object.
+ * @param {number[]} [out=[0, 0]] The output array to store the cusp values.
+ * @returns {number[]} The cusp values [L, C].
+ * @method
+ * @category mapping
+ */
 export const findCuspOKLCH = (a, b, gamut, out = [0, 0]) => {
   const lmsToRgb = getGamutLMStoRGB(gamut);
   const okCoeff = gamut.coefficients;
@@ -282,8 +316,17 @@ export const findGamutIntersectionOKLCH = (a, b, l1, c1, l0, cusp, gamut) => {
 };
 
 /**
- * Takes any OKLCH value and maps it to fall within the given gamut.
+ * Applies fast approximate gamut mapping in OKLab space on the given OKLCH input color,
+ * using the specified gamut and converting to the target color space.
+ * @param {Vector} oklch The input OKLCH color that you wish to gamut map.
+ * @param {ColorGamut} [gamut=sRGBGamut] The gamut object.
+ * @param {ColorSpace} [targetSpace=gamut.space] The target color space.
+ * @param {Vector} [out=vec3()] The output array to store the mapped color.
+ * @param {GamutMapMethod} [mapping=MapToCuspL] The gamut mapping function.
+ * @param {Vector} [cusp] Optional, you can provide the cusp values [L, C] to avoid re-computing them.
+ * @returns {Vector} The mapped color in the target color space.
  * @method
+ * @category mapping
  */
 export const gamutMapOKLCH = (
   oklch,

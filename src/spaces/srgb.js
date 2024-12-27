@@ -8,6 +8,11 @@ import {
 
 import { sRGBGammaToLinearVec3, sRGBLinearToGammaVec3 } from "./util.js";
 
+/**
+ * The sRGB color space in linear form, without a transfer function, aliased as <code>"srgb-linear"</code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const sRGBLinear = {
   id: "srgb-linear",
   toXYZ_M: linear_sRGB_to_XYZ_M,
@@ -16,6 +21,11 @@ export const sRGBLinear = {
   fromLMS_M: LMS_to_linear_sRGB_M,
 };
 
+/**
+ * The sRGB color space, with a transfer function, aliased as <code>"srgb"</code>. Inherits from the {@link sRGBLinear} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const sRGB = {
   id: "srgb",
   base: sRGBLinear,
@@ -23,6 +33,11 @@ export const sRGB = {
   fromBase: sRGBLinearToGammaVec3,
 };
 
+/**
+ * A color gamut for the {@link sRGB} color space.
+ * @type {ColorGamut}
+ * @category gamuts
+ */
 export const sRGBGamut = {
   space: sRGB,
   coefficients: OKLab_to_linear_sRGB_coefficients,

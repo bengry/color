@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> spaces.js</title>
+  <title> spaces/rec2020.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -76,7 +76,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>spaces.js</h1>
+                    <h1>spaces/rec2020.js</h1>
                 </header>
                 
 
@@ -85,63 +85,67 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { XYZ, XYZD50 } from "./spaces/xyz.js";
-import { OKLab, OKLCH, OKHSV, OKHSL } from "./spaces/oklab.js";
-import { sRGB, sRGBLinear, sRGBGamut } from "./spaces/srgb.js";
+            <pre class="prettyprint source linenums"><code>import { vec3 } from "../util.js";
 import {
-  DisplayP3,
-  DisplayP3Linear,
-  DisplayP3Gamut,
-} from "./spaces/display-p3.js";
-import { Rec2020, Rec2020Linear, Rec2020Gamut } from "./spaces/rec2020.js";
-import { A98RGB, A98RGBLinear, A98RGBGamut } from "./spaces/a98-rgb.js";
-import { ProPhotoRGB, ProPhotoRGBLinear } from "./spaces/prophoto-rgb.js";
+  linear_Rec2020_to_LMS_M,
+  linear_Rec2020_to_XYZ_M,
+  LMS_to_linear_Rec2020_M,
+  XYZ_to_linear_Rec2020_M,
+  OKLab_to_linear_Rec2020_coefficients,
+} from "../conversion_matrices.js";
 
-export * from "./spaces/xyz.js";
-export * from "./spaces/oklab.js";
-export * from "./spaces/srgb.js";
-export * from "./spaces/display-p3.js";
-export * from "./spaces/rec2020.js";
-export * from "./spaces/a98-rgb.js";
-export * from "./spaces/prophoto-rgb.js";
+const ALPHA = 1.09929682680944;
+const BETA = 0.018053968510807;
+
+const Rec2020ToLinear = (val) =>
+  val &lt; BETA * 4.5 ? val / 4.5 : Math.pow((val + ALPHA - 1) / ALPHA, 1 / 0.45);
+
+const Rec2020ToGamma = (val) =>
+  val >= BETA ? ALPHA * Math.pow(val, 0.45) - (ALPHA - 1) : 4.5 * val;
 
 /**
- * Returns a list of color spaces.
- *
- * @method
- * @returns {ColorSpace[]} An array of color space objects.
- * @category core
+ * The Rec2020 color space in linear form, without a transfer function, aliased as &lt;code>"rec2020-linear"&lt;/code>.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorSpaces = () => {
-  return [
-    XYZ, // D65
-    XYZD50,
-    OKLab,
-    OKLCH,
-    OKHSV,
-    OKHSL,
-    sRGB,
-    sRGBLinear,
-    DisplayP3,
-    DisplayP3Linear,
-    Rec2020,
-    Rec2020Linear,
-    A98RGB,
-    A98RGBLinear,
-    ProPhotoRGB,
-    ProPhotoRGBLinear,
-  ];
+export const Rec2020Linear = {
+  id: "rec2020-linear",
+  toXYZ_M: linear_Rec2020_to_XYZ_M,
+  fromXYZ_M: XYZ_to_linear_Rec2020_M,
+  toLMS_M: linear_Rec2020_to_LMS_M,
+  fromLMS_M: LMS_to_linear_Rec2020_M,
 };
 
 /**
- * Returns a list of color gamuts.
- *
- * @method
- * @returns {ColorGamut[]} An array of color gamut objects.
- * @category core
+ * The Rec2020 color space, with a transfer function, aliased as &lt;code>"rec2020"&lt;/code>. Inherits from the {@link Rec2020Linear} color space.
+ * @type {ColorSpace}
+ * @category spaces
  */
-export const listColorGamuts = () => {
-  return [sRGBGamut, DisplayP3Gamut, Rec2020Gamut, A98RGBGamut];
+export const Rec2020 = {
+  id: "rec2020",
+  base: Rec2020Linear,
+  toBase: (vec, out = vec3()) => {
+    out[0] = Rec2020ToLinear(vec[0]);
+    out[1] = Rec2020ToLinear(vec[1]);
+    out[2] = Rec2020ToLinear(vec[2]);
+    return out;
+  },
+  fromBase: (vec, out = vec3()) => {
+    out[0] = Rec2020ToGamma(vec[0]);
+    out[1] = Rec2020ToGamma(vec[1]);
+    out[2] = Rec2020ToGamma(vec[2]);
+    return out;
+  },
+};
+
+/**
+ * A color gamut for the {@link Rec2020} color space.
+ * @type {ColorGamut}
+ * @category gamuts
+ */
+export const Rec2020Gamut = {
+  space: Rec2020,
+  coefficients: OKLab_to_linear_Rec2020_coefficients,
 };
 </code></pre>
         </article>

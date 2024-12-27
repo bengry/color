@@ -16,6 +16,11 @@ const Rec2020ToLinear = (val) =>
 const Rec2020ToGamma = (val) =>
   val >= BETA ? ALPHA * Math.pow(val, 0.45) - (ALPHA - 1) : 4.5 * val;
 
+/**
+ * The Rec2020 color space in linear form, without a transfer function, aliased as <code>"rec2020-linear"</code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const Rec2020Linear = {
   id: "rec2020-linear",
   toXYZ_M: linear_Rec2020_to_XYZ_M,
@@ -24,6 +29,11 @@ export const Rec2020Linear = {
   fromLMS_M: LMS_to_linear_Rec2020_M,
 };
 
+/**
+ * The Rec2020 color space, with a transfer function, aliased as <code>"rec2020"</code>. Inherits from the {@link Rec2020Linear} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
 export const Rec2020 = {
   id: "rec2020",
   base: Rec2020Linear,
@@ -41,6 +51,11 @@ export const Rec2020 = {
   },
 };
 
+/**
+ * A color gamut for the {@link Rec2020} color space.
+ * @type {ColorGamut}
+ * @category gamuts
+ */
 export const Rec2020Gamut = {
   space: Rec2020,
   coefficients: OKLab_to_linear_Rec2020_coefficients,

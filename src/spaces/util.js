@@ -1,5 +1,12 @@
 import { vec3 } from "../util.js";
 
+/**
+ * Converts a single sRGB gamma-corrected channel value to linear light (un-companded) form.
+ * @param {number} val - The sRGB gamma-corrected channel value in the range [0, 1].
+ * @returns {number} The linear light channel value.
+ * @method
+ * @category rgb
+ */
 export const sRGBGammaToLinear = (val) => {
   // convert a single channel value
   // where in-gamut values are in the range [0 - 1]
@@ -15,6 +22,13 @@ export const sRGBGammaToLinear = (val) => {
     : sign * Math.pow((abs + 0.055) / 1.055, 2.4);
 };
 
+/**
+ * Converts a single linear-light channel value to sRGB gamma-corrected form.
+ * @param {number} val - The linear-light channel value in the range [0, 1].
+ * @returns {number} The sRGB gamma-corrected channel value.
+ * @method
+ * @category rgb
+ */
 export const sRGBLinearToGamma = (val) => {
   // convert a single channel linear-light value in range 0-1
   // to gamma corrected form
