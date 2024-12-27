@@ -21,8 +21,22 @@ import { listColorSpaces, sRGB, XYZ } from "./spaces.js";
  */
 
 /**
+ * @typedef {Object} ChromaticAdaptation
+ * @property {Matrix3x3} from the matrix to convert from the source whitepoint to the destination whitepoint
+ * @property {Matrix3x3} to the matrix to convert from the destination whitepoint to the source whitepoint
+ */
+
+/**
  * @typedef {Object} ColorSpace
  * @property {String} id the unique identifier for this color space in lowercase
+ * @property {Matrix3x3} [toXYZ_M] optional matrix to convert this color directly to XYZ D65
+ * @property {Matrix3x3} [fromXYZ_M] optional matrix to convert XYZ D65 to this color space
+ * @property {Matrix3x3} [toLMS_M] optional matrix to convert this color space to OKLab's LMS intermediary form
+ * @property {Matrix3x3} [fromLMS_M] optional matrix to convert OKLab's LMS intermediary form to this color space
+ * @property {ChromaticAdaptation} [adapt] optional chromatic adaptation matrices
+ * @property {ColorSpace} [base] an optional base color space that this space is derived from
+ * @property {function} [toBase] if a base color space exists, this maps the color to the base space form (e.g. gamma to the linear base space)
+ * @property {function} [fromBase] if a base color space exists, this maps the color from the base space form (e.g. the linear base space to the gamma space)
  */
 
 /**

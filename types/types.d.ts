@@ -18,16 +18,32 @@ declare type Vector = number[];
 
 /**
  * @property id - the unique identifier for this color space in lowercase
+ * @property [toXYZ_M] - optional matrix to convert this color directly to XYZ D65
+ * @property [fromXYZ_M] - optional matrix to convert XYZ D65 to this color space
+ * @property [toLMS_M] - optional matrix to convert this color space to OKLab's LMS intermediary form
+ * @property [fromLMS_M] - optional matrix to convert OKLab's LMS intermediary form to this color space
+ * @property [adapt] - optional chromatic adaptation matrices
+ * @property [base] - an optional base color space that this space is derived from
+ * @property [toBase] - if a base color space exists, this maps the color to the base space form (e.g. gamma to the linear base space)
+ * @property [fromBase] - if a base color space exists, this maps the color from the base space form (e.g. the linear base space to the gamma space)
  */
 declare type ColorSpace = {
-    id: string;
+  id: string;
+  toXYZ_M?: Matrix3x3;
+  fromXYZ_M?: Matrix3x3;
+  toLMS_M?: Matrix3x3;
+  fromLMS_M?: Matrix3x3;
+  adapt?: any;
+  base?: ColorSpace;
+  toBase?: (...params: any[]) => any;
+  fromBase?: (...params: any[]) => any;
 };
 
 /**
  * @property space - the color space associated with this color gamut
  */
 declare type ColorGamut = {
-    space: ColorSpace;
+  space: ColorSpace;
 };
 
 /**
@@ -37,7 +53,11 @@ declare type ColorGamut = {
  * @param [out = vec3()] - The output vector.
  * @returns The transformed color.
  */
-declare function OKLab_to(OKLab: Vector, LMS_to_output: Matrix3x3, out?: Vector): Vector;
+declare function OKLab_to(
+  OKLab: Vector,
+  LMS_to_output: Matrix3x3,
+  out?: Vector
+): Vector;
 
 /**
  * Converts a color from another color space to OKLab.
@@ -46,7 +66,11 @@ declare function OKLab_to(OKLab: Vector, LMS_to_output: Matrix3x3, out?: Vector)
  * @param [out = vec3()] - The output vector.
  * @returns The transformed color.
  */
-declare function OKLab_from(input: Vector, input_to_LMS: Matrix3x3, out?: Vector): Vector;
+declare function OKLab_from(
+  input: Vector,
+  input_to_LMS: Matrix3x3,
+  out?: Vector
+): Vector;
 
 /**
  * Transforms a color vector by the specified 3x3 transformation matrix.
@@ -55,7 +79,11 @@ declare function OKLab_from(input: Vector, input_to_LMS: Matrix3x3, out?: Vector
  * @param [out = vec3()] - The output vector.
  * @returns The transformed color.
  */
-declare function transform(input: Vector, matrix: Matrix3x3, out?: Vector): Vector;
+declare function transform(
+  input: Vector,
+  matrix: Matrix3x3,
+  out?: Vector
+): Vector;
 
 /**
  * Serializes a color to a CSS color string.
@@ -64,7 +92,11 @@ declare function transform(input: Vector, matrix: Matrix3x3, out?: Vector): Vect
  * @param [outputSpace = inputSpace] - The output color space.
  * @returns The serialized color string.
  */
-declare function serialize(input: Vector, inputSpace: ColorSpace, outputSpace?: ColorSpace): string;
+declare function serialize(
+  input: Vector,
+  inputSpace: ColorSpace,
+  outputSpace?: ColorSpace
+): string;
 
 /**
  * Deserializes a color string to an object with <code>id</code> (color space string) and <code>coords</code> (the vector, in 3 or 4 dimensions).
@@ -88,7 +120,11 @@ declare function deserialize(input: string): any;
  * @param [out = vec3()] - The output vector.
  * @returns The parsed and converted color.
  */
-declare function parse(input: string, targetSpace: ColorSpace, out?: Vector): Vector;
+declare function parse(
+  input: string,
+  targetSpace: ColorSpace,
+  out?: Vector
+): Vector;
 
 /**
  * Converts a color from one color space to another.
@@ -98,7 +134,12 @@ declare function parse(input: string, targetSpace: ColorSpace, out?: Vector): Ve
  * @param [out = vec3()] - The output vector.
  * @returns The converted color.
  */
-declare function convert(input: Vector, fromSpace: ColorSpace, toSpace: ColorSpace, out?: Vector): Vector;
+declare function convert(
+  input: Vector,
+  fromSpace: ColorSpace,
+  toSpace: ColorSpace,
+  out?: Vector
+): Vector;
 
 /**
  * Calculates the DeltaEOK (color difference) between two OKLab colors.
@@ -149,7 +190,12 @@ declare const MapToAdaptiveCuspL: GamutMapMethod;
  * @param okCoeff - The OKLab coefficients.
  * @returns The maximum saturation.
  */
-declare function computeMaxSaturationOKLC(a: number, b: number, lmsToRgb: number[][], okCoeff: number[][][]): number;
+declare function computeMaxSaturationOKLC(
+  a: number,
+  b: number,
+  lmsToRgb: number[][],
+  okCoeff: number[][][]
+): number;
 
 /**
  * Retrieves the LMS to RGB conversion matrix from the given gamut.
@@ -166,7 +212,12 @@ declare function getGamutLMStoRGB(gamut: ColorGamut): Matrix3x3;
  * @param [out = [0, 0]] - The output array to store the cusp values.
  * @returns The cusp values [L, C].
  */
-declare function findCuspOKLCH(a: number, b: number, gamut: ColorGamut, out?: number[]): number[];
+declare function findCuspOKLCH(
+  a: number,
+  b: number,
+  gamut: ColorGamut,
+  out?: number[]
+): number[];
 
 /**
  * Applies fast approximate gamut mapping in OKLab space on the given OKLCH input color,
@@ -179,7 +230,14 @@ declare function findCuspOKLCH(a: number, b: number, gamut: ColorGamut, out?: nu
  * @param [cusp] - Optional, you can provide the cusp values [L, C] to avoid re-computing them.
  * @returns The mapped color in the target color space.
  */
-declare function gamutMapOKLCH(oklch: Vector, gamut?: ColorGamut, targetSpace?: ColorSpace, out?: Vector, mapping?: GamutMapMethod, cusp?: Vector): Vector;
+declare function gamutMapOKLCH(
+  oklch: Vector,
+  gamut?: ColorGamut,
+  targetSpace?: ColorSpace,
+  out?: Vector,
+  mapping?: GamutMapMethod,
+  cusp?: Vector
+): Vector;
 
 /**
  * Converts OKHSL color to OKLab color.
@@ -188,7 +246,11 @@ declare function gamutMapOKLCH(oklch: Vector, gamut?: ColorGamut, targetSpace?: 
  * @param [out = vec3()] - The output array to store the OKLab color.
  * @returns The OKLab color as an array [L, a, b].
  */
-declare function OKHSLToOKLab(hsl: Vector, gamut?: ColorGamut, out?: Vector): Vector;
+declare function OKHSLToOKLab(
+  hsl: Vector,
+  gamut?: ColorGamut,
+  out?: Vector
+): Vector;
 
 /**
  * Converts OKLab color to OKHSL color.
@@ -197,7 +259,11 @@ declare function OKHSLToOKLab(hsl: Vector, gamut?: ColorGamut, out?: Vector): Ve
  * @param [out = vec3()] - The output array to store the OKHSL color.
  * @returns The OKHSL color as an array [h, s, l].
  */
-declare function OKLabToOKHSL(lab: Vector, gamut?: ColorGamut, out?: Vector): Vector;
+declare function OKLabToOKHSL(
+  lab: Vector,
+  gamut?: ColorGamut,
+  out?: Vector
+): Vector;
 
 /**
  * Converts OKHSV color to OKLab color.
@@ -206,7 +272,11 @@ declare function OKLabToOKHSL(lab: Vector, gamut?: ColorGamut, out?: Vector): Ve
  * @param [out = vec3()] - The output array to store the OKLab color.
  * @returns The OKLab color as an array [L, a, b].
  */
-declare function OKHSVToOKLab(hsv: Vector, gamut?: ColorGamut, out?: Vector): Vector;
+declare function OKHSVToOKLab(
+  hsv: Vector,
+  gamut?: ColorGamut,
+  out?: Vector
+): Vector;
 
 /**
  * Converts OKLab color to OKHSV color.
@@ -215,7 +285,11 @@ declare function OKHSVToOKLab(hsv: Vector, gamut?: ColorGamut, out?: Vector): Ve
  * @param [out = vec3()] - The output array to store the OKHSV color.
  * @returns The OKHSV color as an array [h, s, v].
  */
-declare function OKLabToOKHSV(lab: Vector, gamut?: ColorGamut, out?: Vector): Vector;
+declare function OKLabToOKHSV(
+  lab: Vector,
+  gamut?: ColorGamut,
+  out?: Vector
+): Vector;
 
 /**
  * Returns a list of color spaces.
@@ -480,4 +554,3 @@ declare const XYZ: ColorSpace;
  * XYZ color space with D50 whitepoint, aliased as <code>"xyz-d50"</code>.
  */
 declare const XYZD50: ColorSpace;
-

@@ -25,6 +25,7 @@
     "terser": "^5.31.3",
     "tsd-jsdoc": "^2.5.0"
   },
+  "types": "./types/types.d.ts",
   "scripts": {
     "visualize": "canvas-sketch-cli test/canvas-graph.js --open",
     "docs": "jsdoc -t node_modules/better-docs -c .jsdoc.json -d docs -R DOC.md",
