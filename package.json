@@ -16,6 +16,7 @@
     "culori": "^4.0.1",
     "esbuild": "^0.23.0",
     "faucet": "^0.0.4",
+    "jsdoc": "^4.0.4",
     "pako": "^2.1.0",
     "png-tools": "^1.0.4",
     "prettier": "^3.3.3",
@@ -24,6 +25,7 @@
   },
   "scripts": {
     "visualize": "canvas-sketch-cli test/canvas-graph.js --open",
+    "docs": "jsdoc -c .jsdoc.json -d docs -R DOC.md",
     "test": "faucet test/test*.js",
     "bench": "node test/bench-colorjs.js",
     "bench:node": "NODE_ENV=production node --prof --no-logfile-per-isolate test/bench-node.js && node --prof-process v8.log",
