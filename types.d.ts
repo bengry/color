@@ -217,6 +217,116 @@ declare module "@texel/color" {
      */
     function OKLabToOKHSV(lab: Vector, gamut?: ColorGamut, out?: Vector): Vector;
     /**
+     * The Adobe RGB (1998) color space in linear form, without a transfer function, aliased as <code>"a98-rgb-linear"</code>.
+     */
+    const A98RGBLinear: ColorSpace;
+    /**
+     * The Adobe RGB (1998) color space, with a transfer function, aliased as <code>"a98-rgb"</code>. Inherits from the {@link A98RGBLinear} color space.
+     */
+    const A98RGB: ColorSpace;
+    /**
+     * A color gamut for the {@link A98RGB}, or Adobe RGB (1998), color space.
+     */
+    const A98RGBGamut: ColorGamut;
+    /**
+     * The Display-P3 color space in linear form, without a transfer function, aliased as <code>"display-p3-linear"</code>.
+     */
+    const DisplayP3Linear: ColorSpace;
+    /**
+     * The Display-P3 color space, with a transfer function, aliased as <code>"display-p3"</code>. Inherits from the {@link DisplayP3Linear} color space.
+     */
+    const DisplayP3: ColorSpace;
+    /**
+     * A color gamut for the {@link DisplayP3} color space.
+     */
+    const DisplayP3Gamut: ColorGamut;
+    /**
+     * The OKLab color space.
+     */
+    const OKLab: ColorSpace;
+    /**
+     * The OKLCH color space, with Lightness, Chroma, and Hue components. This is the cylindrical form of the {@link OKLab} color space.
+     */
+    const OKLCH: ColorSpace;
+    /**
+     * An implementation of the OKHSL color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+     * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+     * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+     */
+    const OKHSL: ColorSpace;
+    /**
+     * An implementation of the OKHSV color space, fixed to the {@link sRGBGamut}. This is useful for color pickers and other applications where
+     * you wish to work with components in a well-defined and enclosed cylindrical form. If you wish to use OKHSL with a different gamut, you'll
+     * need to use the {@link OKHSLToOKLab} and {@link OKLabToOKHSL} methods directly, passing your desired gamut.
+     */
+    const OKHSV: ColorSpace;
+    /**
+     * The ProPhotoRGB color space in linear form, without a transfer function, aliased as <code>"prophoto-rgb-linear"</code>.
+     */
+    const ProPhotoRGBLinear: ColorSpace;
+    /**
+     * The ProPhotoRGB color space, with a transfer function, aliased as <code>"prophoto-rgb"</code>. Inherits from the {@link ProPhotoRGBLinear} color space.
+     */
+    const ProPhotoRGB: ColorSpace;
+    /**
+     * The Rec2020 color space in linear form, without a transfer function, aliased as <code>"rec2020-linear"</code>.
+     */
+    const Rec2020Linear: ColorSpace;
+    /**
+     * The Rec2020 color space, with a transfer function, aliased as <code>"rec2020"</code>. Inherits from the {@link Rec2020Linear} color space.
+     */
+    const Rec2020: ColorSpace;
+    /**
+     * A color gamut for the {@link Rec2020} color space.
+     */
+    const Rec2020Gamut: ColorGamut;
+    /**
+     * The sRGB color space in linear form, without a transfer function, aliased as <code>"srgb-linear"</code>.
+     */
+    const sRGBLinear: ColorSpace;
+    /**
+     * The sRGB color space, with a transfer function, aliased as <code>"srgb"</code>. Inherits from the {@link sRGBLinear} color space.
+     */
+    const sRGB: ColorSpace;
+    /**
+     * A color gamut for the {@link sRGB} color space.
+     */
+    const sRGBGamut: ColorGamut;
+    /**
+     * Converts a single sRGB gamma-corrected channel value to linear light (un-companded) form.
+     * @param val - The sRGB gamma-corrected channel value in the range [0, 1].
+     * @returns The linear light channel value.
+     */
+    function sRGBGammaToLinear(val: number): number;
+    /**
+     * Converts a single linear-light channel value to sRGB gamma-corrected form.
+     * @param val - The linear-light channel value in the range [0, 1].
+     * @returns The sRGB gamma-corrected channel value.
+     */
+    function sRGBLinearToGamma(val: number): number;
+    /**
+     * Converts a color from XYZ with D65 whitepoint to XYZ with D50 whitepoint.
+     * @param XYZ - The input color in XYZ with D65 whitepoint.
+     * @param [out = vec3()] - The output color in XYZ with D50 whitepoint.
+     * @returns The converted color in XYZ with D50 whitepoint.
+     */
+    function XYZD65ToD50(XYZ: Vector, out?: Vector): Vector;
+    /**
+     * Converts a color from XYZ with D50 whitepoint to XYZ with D65 whitepoint.
+     * @param XYZ - The input color in XYZ with D50 whitepoint.
+     * @param [out = vec3()] - The output color in XYZ with D65 whitepoint.
+     * @returns The converted color in XYZ with D65 whitepoint.
+     */
+    function XYZD50ToD65(XYZ: Vector, out?: Vector): Vector;
+    /**
+     * XYZ color space with D65 whitepoint, aliased as <code>"xyz"</code>.
+     */
+    const XYZ: ColorSpace;
+    /**
+     * XYZ color space with D50 whitepoint, aliased as <code>"xyz-d50"</code>.
+     */
+    const XYZD50: ColorSpace;
+    /**
      * Returns a list of color spaces.
      * @returns An array of color space objects.
      */

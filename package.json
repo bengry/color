@@ -30,8 +30,8 @@
   },
   "scripts": {
     "visualize": "canvas-sketch-cli test/canvas-graph.js --open",
-    "docs": "jsdoc src -t node_modules/better-docs -c tools/.jsdoc.json -d docs -R DOC.md",
-    "types": "jsdoc src -t node_modules/tsd-jsdoc/dist -c tools/.jsdoc.types.json -d .",
+    "docs": "jsdoc src -r -t node_modules/better-docs -c tools/.jsdoc.json -d docs -R DOC.md",
+    "types": "jsdoc src -r -t node_modules/tsd-jsdoc/dist -c tools/.jsdoc.types.json -d .",
     "test": "faucet test/test*.js",
     "bench": "node test/bench-colorjs.js",
     "bench:node": "NODE_ENV=production node --prof --no-logfile-per-isolate test/bench-node.js && node --prof-process v8.log",
