@@ -1,4 +1,5 @@
 ///<reference path="../types/types.d.ts" />
-import { ColorGamut } from "../src/index.js";
+import { listColorSpaces, serialize, sRGB } from "../src/index.js";
+console.log(serialize([0.5, 0.25, 0.15], sRGB), listColorSpaces()[0].id);
 
-console.log(ColorGamut);
+// This stub is just to check that this compiles properly with tsc...
