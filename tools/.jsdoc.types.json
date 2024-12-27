@@ -1,0 +1,3 @@
+{
+  "plugins": ["./tools/jsdoc-module-plugin.cjs"]
+}

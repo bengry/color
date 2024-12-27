@@ -1,12 +1,17 @@
 const { name } = require("../package.json");
 const kinds = ["class", "member", "constant", "function", "typedef"];
 
+let hasIncludedModule = false;
+
 module.exports.handlers = {
   beforeParse: function (e) {
-    e.source += `/**
- * @module ${name}
- */
+    if (!hasIncludedModule) {
+      hasIncludedModule = true;
+      e.source += `/**
+  * @module ${name}
+  */
 `;
+    }
   },
   // adds @module texel/color to all doclets
   newDoclet(e) {

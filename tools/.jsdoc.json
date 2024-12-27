@@ -1,5 +1,4 @@
 {
-  "sourceType": "module",
   "tags": {
     "allowUnknownTags": ["category", "subcategory"]
   },
