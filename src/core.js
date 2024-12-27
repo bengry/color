@@ -304,6 +304,7 @@ export const parse = (input, targetSpace, out = vec3()) => {
  * @returns {Vector} The converted color.
  * @method
  * @category core
+ * @memberof module:@texel/color
  */
 export const convert = (input, fromSpace, toSpace, out = vec3()) => {
   // place into output
