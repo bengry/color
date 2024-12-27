@@ -10,6 +10,7 @@
     "url": "https://github.com/mattdesl"
   },
   "devDependencies": {
+    "better-docs": "^2.7.3",
     "canvas-sketch": "^0.7.7",
     "canvas-sketch-cli": "^1.11.21",
     "colorjs.io": "^0.5.2",
@@ -21,11 +22,13 @@
     "png-tools": "^1.0.4",
     "prettier": "^3.3.3",
     "tape": "^5.8.1",
-    "terser": "^5.31.3"
+    "terser": "^5.31.3",
+    "tsd-jsdoc": "^2.5.0"
   },
   "scripts": {
     "visualize": "canvas-sketch-cli test/canvas-graph.js --open",
-    "docs": "jsdoc -c .jsdoc.json -d docs -R DOC.md",
+    "docs": "jsdoc -t node_modules/better-docs -c .jsdoc.json -d docs -R DOC.md",
+    "types": "jsdoc -t node_modules/tsd-jsdoc/dist -c .jsdoc.json -d types",
     "test": "faucet test/test*.js",
     "bench": "node test/bench-colorjs.js",
     "bench:node": "NODE_ENV=production node --prof --no-logfile-per-isolate test/bench-node.js && node --prof-process v8.log",

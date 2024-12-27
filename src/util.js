@@ -5,6 +5,7 @@
  * @param {number} min - The minimum value.
  * @param {number} max - The maximum value.
  * @returns {number} - The clamped value.
+ * @category utils
  */
 export const clamp = (value, min, max) => Math.max(Math.min(value, max), min);
 
@@ -15,6 +16,7 @@ export const clamp = (value, min, max) => Math.max(Math.min(value, max), min);
  * @param {number} max - The end value.
  * @param {number} t - The interpolation factor between 0 and 1.
  * @returns {number} - The interpolated value.
+ * @category utils
  */
 export const lerp = (min, max, t) => min * (1 - t) + max * t;
 
@@ -23,6 +25,7 @@ export const lerp = (min, max, t) => min * (1 - t) + max * t;
  * @method
  * @param {number} n - The angle in degrees.
  * @returns {number} - The angle in radians.
+ * @category utils
  */
 export const degToRad = (n) => (n * Math.PI) / 180;
 
@@ -31,6 +34,7 @@ export const degToRad = (n) => (n * Math.PI) / 180;
  * @method
  * @param {number} n - The angle in radians.
  * @returns {number} - The angle in degrees.
+ * @category utils
  */
 export const radToDeg = (n) => (n * 180) / Math.PI;
 
@@ -39,6 +43,7 @@ export const radToDeg = (n) => (n * 180) / Math.PI;
  * @method
  * @param {number} angle - The angle in degrees.
  * @returns {number} - The constrained angle.
+ * @category utils
  */
 export const constrainAngle = (angle) => ((angle % 360) + 360) % 360;
 
@@ -48,6 +53,7 @@ export const constrainAngle = (angle) => ((angle % 360) + 360) % 360;
  * @param {string} str - The hex color string.
  * @param {number[]} [out=vec3()] - The output array.
  * @returns {number[]} - The RGB array.
+ * @category utils
  */
 export const hexToRGB = (str, out = vec3()) => {
   let hex = str.replace(/#/, "");
@@ -70,6 +76,7 @@ export const hexToRGB = (str, out = vec3()) => {
  * @method
  * @param {number[]} rgb - The RGB array.
  * @returns {string} - The hex color string.
+ * @category utils
  */
 export const RGBToHex = (rgb) =>
   `#${rgb.map((n) => floatToByte(n).toString(16).padStart(2, "0")).join("")}`;
@@ -77,6 +84,7 @@ export const RGBToHex = (rgb) =>
 /**
  * @method
  * @deprecated Use RGBToHex instead.
+ * @category utils
  */
 export const RGBtoHex = RGBToHex;
 
@@ -86,6 +94,7 @@ export const RGBtoHex = RGBToHex;
  * @param {number[]} lrgb - The linear RGB array.
  * @param {number} [ep=GAMUT_EPSILON] - The epsilon value for comparison.
  * @returns {boolean} - True if the color is within the gamut, false otherwise.
+ * @category utils
  */
 export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
   const r = lrgb[0];
@@ -107,6 +116,7 @@ export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
  * @param {number[]} rgb - The RGB array.
  * @param {number[]} [out=vec3()] - The output array.
  * @returns {number[]} - The clamped RGB array.
+ * @category utils
  */
 export const clampedRGB = (rgb, out = vec3()) => {
   out[0] = clamp(rgb[0], 0, 1);
@@ -121,6 +131,7 @@ export const clampedRGB = (rgb, out = vec3()) => {
  * @param {number[]} arg - The xyY array.
  * @param {number[]} [out=vec3()] - The output array.
  * @returns {number[]} - The XYZ array.
+ * @category utils
  */
 export const xyY_to_XYZ = (arg, out = vec3()) => {
   let X, Y, Z, x, y;
@@ -145,6 +156,7 @@ export const xyY_to_XYZ = (arg, out = vec3()) => {
  * @param {number[]} arg - The XYZ array.
  * @param {number[]} [out=vec3()] - The output array.
  * @returns {number[]} - The xyY array.
+ * @category utils
  */
 export const XYZ_to_xyY = (arg, out = vec3()) => {
   let sum, X, Y, Z;
@@ -168,6 +180,7 @@ export const XYZ_to_xyY = (arg, out = vec3()) => {
  * @method
  * @param {number} n - The float value.
  * @returns {number} - The byte value.
+ * @category utils
  */
 export const floatToByte = (n) => clamp(Math.round(255 * n), 0, 255);
 
@@ -175,6 +188,7 @@ export const floatToByte = (n) => clamp(Math.round(255 * n), 0, 255);
  * Creates a new vec3 array.
  * @method
  * @returns {number[]} - The vec3 array.
+ * @category utils
  */
 export const vec3 = () => [0, 0, 0];
 
@@ -184,6 +198,7 @@ export const vec3 = () => [0, 0, 0];
  * @param {number} a0 - The first angle in degrees.
  * @param {number} a1 - The second angle in degrees.
  * @returns {number} - The delta angle in degrees.
+ * @category utils
  */
 export const deltaAngle = (a0, a1) => {
   var da = (a1 - a0) % 360;
@@ -197,5 +212,6 @@ export const deltaAngle = (a0, a1) => {
  * @param {number} a1 - The end angle in degrees.
  * @param {number} t - The interpolation factor between 0 and 1.
  * @returns {number} - The interpolated angle in degrees.
+ * @category utils
  */
 export const lerpAngle = (a0, a1, t) => a0 + deltaAngle(a0, a1) * t;

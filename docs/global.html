@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Global</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Global</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
 </head>
 
-<body>
 
-<div id="main">
 
-    <h1 class="page-title">Global</h1>
-
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
     
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li></ul></div><div class="category"><h2>core</h2><h3>Global</h3><ul><li><a href="global.html#convert">convert</a></li><li><a href="global.html#deltaEOK">deltaEOK</a></li><li><a href="global.html#deserialize">deserialize</a></li><li><a href="global.html#listColorGamuts">listColorGamuts</a></li><li><a href="global.html#listColorSpaces">listColorSpaces</a></li><li><a href="global.html#parse">parse</a></li><li><a href="global.html#serialize">serialize</a></li></ul></div><div class="category"><h2>math</h2><h3>Global</h3><ul><li><a href="global.html#OKLab_from">OKLab_from</a></li><li><a href="global.html#OKLab_to">OKLab_to</a></li><li><a href="global.html#transform">transform</a></li></ul></div><div class="category"><h2>utils</h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p></p>
+                    <h1>Global</h1>
+                </header>
+                
 
 
 
@@ -66,7 +123,6 @@
     
 
     
-
     
 
     
@@ -80,7 +136,7 @@
         
     
     </div>
-
+    
     
 
     
@@ -94,11 +150,739 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OKLab_from">
+        <a class="href-link" href="#OKLab_from">#</a>
+        
+        <span class="code-name">
+            
+                OKLab_from<span class="signature">(input, input_to_LMS, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts a color from another color space to OKLab.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The input color.</td>
+</tr>
+
 
         
+
             
-<h4 class="name" id="RGBtoHex"><span class="type-signature">(constant) </span>RGBtoHex<span class="type-signature"></span></h4>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input_to_LMS</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Matrix3x3">Matrix3x3</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The transformation matrix from the input color space to LMS.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output vector.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line76">line 76</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The transformed color.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OKLab_to">
+        <a class="href-link" href="#OKLab_to">#</a>
+        
+        <span class="code-name">
+            
+                OKLab_to<span class="signature">(OKLab, LMS_to_output, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts OKLab color to another color space.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>OKLab</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The OKLab color.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>LMS_to_output</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Matrix3x3">Matrix3x3</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The transformation matrix from LMS to the output color space.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output vector.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line61">line 61</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The transformed color.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="RGBToHex">
+        <a class="href-link" href="#RGBToHex">#</a>
+        
+        <span class="code-name">
+            
+                RGBToHex<span class="signature">(rgb)</span><span class="type-signature"> &rarr; {string}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts an RGB array to a hex color string.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>rgb</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The RGB array.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line81">line 81</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>- The hex color string.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">string</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="RGBtoHex">
+        <a class="href-link" href="#RGBtoHex">#</a>
+        
+        <span class="code-name">
+            
+                RGBtoHex<span class="signature">()</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+
+
+
 
 
 
@@ -136,12 +920,6 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line80">line 80</a>
-    </li></ul></dd>
     
 
     
@@ -149,67 +927,12 @@
     
 
     
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="gamutMapOKLCH"><span class="type-signature">(constant) </span>gamutMapOKLCH<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Takes any OKLCH value and maps it to fall within the given gamut.
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="gamut.js.html">gamut.js</a>, <a href="gamut.js.html#line261">line 261</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line89">line 89</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -218,28 +941,44 @@
 
 
 
-        
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="RGBToHex"><span class="type-signature"></span>RGBToHex<span class="signature">(rgb)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
 
 
 
-<div class="description">
-    Converts an RGB array to a hex color string.
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="XYZ_to_xyY">
+        <a class="href-link" href="#XYZ_to_xyY">#</a>
+        
+        <span class="code-name">
+            
+                XYZ_to_xyY<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts XYZ color space to xyY color space.
+    </div>
+    
 
 
 
@@ -251,52 +990,111 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>rgb</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-
+            <th>Type</th>
 
             
-            </td>
-
+            <th>Attributes</th>
             
 
             
+            <th>Default</th>
+            
 
-            <td class="description last">The RGB array.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-    </tbody>
-</table>
+        <tbody>
+        
 
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>arg</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The XYZ array.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output array.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -327,18 +1125,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line74">line 74</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line161">line 161</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -356,49 +1155,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The hex color string.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The xyY array.</div>
     
-    <h4 class="name" id="XYZ_to_xyY"><span class="type-signature"></span>XYZ_to_xyY<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;number></code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Converts XYZ color space to xyY color space.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="clamp">
+        <a class="href-link" href="#clamp">#</a>
+        
+        <span class="code-name">
+            
+                clamp<span class="signature">(value, min, max)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Clamps a value between a minimum and maximum value.
+    </div>
+    
 
 
 
@@ -410,107 +1220,104 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>arg</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
+            <th>Type</th>
 
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The XYZ array.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>out</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>value</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The value to clamp.</td>
+</tr>
+
+
+        
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
+<tr class="deep-level-0">
+  
+      <td class="name"><code>min</code></td>
+  
 
-                
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
 
-                
-                </td>
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The minimum value.</td>
+</tr>
+
+
+        
+
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>max</code></td>
+  
 
-            
-                <td class="default">
-                
-                    vec3()
-                
-                </td>
-            
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
 
-            <td class="description last">The output array.</td>
-        </tr>
 
-    
-    </tbody>
-</table>
+  
+  </td>
 
+  
+
+  
+
+  <td class="description last">The maximum value.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -541,18 +1348,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line148">line 148</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line10">line 10</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -570,49 +1378,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The xyY array.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;number></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The clamped value.</div>
     
-    <h4 class="name" id="clamp"><span class="type-signature"></span>clamp<span class="signature">(value, min, max)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Clamps a value between a minimum and maximum value.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="clampedRGB">
+        <a class="href-link" href="#clampedRGB">#</a>
+        
+        <span class="code-name">
+            
+                clampedRGB<span class="signature">(rgb, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Clamps an RGB array to the range [0, 1].
+    </div>
+    
 
 
 
@@ -624,98 +1443,111 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>value</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+            <th>Type</th>
 
             
-            </td>
-
+            <th>Attributes</th>
             
 
             
+            <th>Default</th>
+            
 
-            <td class="description last">The value to clamp.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>rgb</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The RGB array.</td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
 
-            
-
-            <td class="description last">The minimum value.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
 
-            
+      
 
-            <td class="description last">The maximum value.</td>
-        </tr>
+      
+      </td>
+  
 
-    
-    </tbody>
-</table>
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
 
+  <td class="description last">The output array.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -746,18 +1578,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line9">line 9</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line121">line 121</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -775,49 +1608,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The clamped value.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The clamped RGB array.</div>
     
-    <h4 class="name" id="clampedRGB"><span class="type-signature"></span>clampedRGB<span class="signature">(rgb, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;number></code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Clamps an RGB array to the range [0, 1].
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="constrainAngle">
+        <a class="href-link" href="#constrainAngle">#</a>
+        
+        <span class="code-name">
+            
+                constrainAngle<span class="signature">(angle)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Constrains an angle to the range [0, 360).
+    </div>
+    
 
 
 
@@ -829,107 +1673,54 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>rgb</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
+            <th>Type</th>
 
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The RGB array.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>out</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>angle</code></td>
+  
 
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
 
-                
 
-                
-                </td>
-            
+  
+  </td>
 
-            
-                <td class="default">
-                
-                    vec3()
-                
-                </td>
-            
+  
 
-            <td class="description last">The output array.</td>
-        </tr>
+  
 
-    
-    </tbody>
-</table>
+  <td class="description last">The angle in degrees.</td>
+</tr>
 
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -960,18 +1751,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line110">line 110</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line48">line 48</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -989,49 +1781,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The clamped RGB array.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;number></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The constrained angle.</div>
     
-    <h4 class="name" id="constrainAngle"><span class="type-signature"></span>constrainAngle<span class="signature">(angle)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Constrains an angle to the range [0, 360).
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="convert">
+        <a class="href-link" href="#convert">#</a>
+        
+        <span class="code-name">
+            
+                convert<span class="signature">(input, fromSpace, toSpace, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts a color from one color space to another.
+    </div>
+    
 
 
 
@@ -1043,52 +1846,185 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>angle</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+            <th>Type</th>
 
             
-            </td>
-
+            <th>Attributes</th>
             
 
             
+            <th>Default</th>
+            
 
-            <td class="description last">The angle in degrees.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-    </tbody>
-</table>
+        <tbody>
+        
 
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The input color.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>fromSpace</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorSpace">ColorSpace</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The source color space.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>toSpace</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorSpace">ColorSpace</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The target color space.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output vector.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1119,18 +2055,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line43">line 43</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line284">line 284</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1148,49 +2085,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The constrained angle.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>The converted color.</div>
     
-    <h4 class="name" id="degToRad"><span class="type-signature"></span>degToRad<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Converts degrees to radians.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="degToRad">
+        <a class="href-link" href="#degToRad">#</a>
+        
+        <span class="code-name">
+            
+                degToRad<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts degrees to radians.
+    </div>
+    
 
 
 
@@ -1202,52 +2150,54 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>n</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
+            <th>Type</th>
 
             
 
             
 
-            <td class="description last">The angle in degrees.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-    </tbody>
-</table>
+        <tbody>
+        
 
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>n</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The angle in degrees.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1278,18 +2228,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line27">line 27</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line30">line 30</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1307,49 +2258,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The angle in radians.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The angle in radians.</div>
     
-    <h4 class="name" id="deltaAngle"><span class="type-signature"></span>deltaAngle<span class="signature">(a0, a1)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Calculates the delta angle between two angles.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="deltaAngle">
+        <a class="href-link" href="#deltaAngle">#</a>
+        
+        <span class="code-name">
+            
+                deltaAngle<span class="signature">(a0, a1)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Calculates the delta angle between two angles.
+    </div>
+    
 
 
 
@@ -1361,75 +2323,79 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>a0</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
+            <th>Type</th>
 
             
 
             
 
-            <td class="description last">The first angle in degrees.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>a1</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>a0</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The first angle in degrees.</td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>a1</code></td>
+  
 
-            
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
 
-            <td class="description last">The second angle in degrees.</td>
-        </tr>
 
-    
-    </tbody>
-</table>
+  
+  </td>
 
+  
+
+  
+
+  <td class="description last">The second angle in degrees.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1460,18 +2426,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line187">line 187</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line203">line 203</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1489,49 +2456,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The delta angle in degrees.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The delta angle in degrees.</div>
     
-    <h4 class="name" id="floatToByte"><span class="type-signature"></span>floatToByte<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Converts a float value to a byte value.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="deltaEOK">
+        <a class="href-link" href="#deltaEOK">#</a>
+        
+        <span class="code-name">
+            
+                deltaEOK<span class="signature">(oklab1, oklab2)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Calculates the DeltaEOK (color difference) between two OKLab colors.
+    </div>
+    
 
 
 
@@ -1543,52 +2521,79 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>n</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
+            <th>Type</th>
 
             
 
             
 
-            <td class="description last">The float value.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-    </tbody>
-</table>
+        <tbody>
+        
 
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>oklab1</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The first OKLab color.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>oklab2</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The second OKLab color.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1619,18 +2624,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line171">line 171</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line414">line 414</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1648,49 +2654,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The byte value.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>The delta E value.</div>
     
-    <h4 class="name" id="hexToRGB"><span class="type-signature"></span>hexToRGB<span class="signature">(str, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Converts a hex color string to an RGB array.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="deserialize">
+        <a class="href-link" href="#deserialize">#</a>
+        
+        <span class="code-name">
+            
+                deserialize<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Deserializes a color string to an object with color space and coordinates.
+    </div>
+    
 
 
 
@@ -1702,107 +2719,54 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>str</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
+            <th>Type</th>
 
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The hex color string.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>out</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input</code></td>
+  
 
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
 
-                
 
-                
-                </td>
-            
+  
+  </td>
 
-            
-                <td class="default">
-                
-                    vec3()
-                
-                </td>
-            
+  
 
-            <td class="description last">The output array.</td>
-        </tr>
+  
 
-    
-    </tbody>
-</table>
+  <td class="description last">The color string to deserialize.</td>
+</tr>
 
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1833,18 +2797,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line52">line 52</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line170">line 170</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1862,49 +2827,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The RGB array.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;number></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>The deserialized color object.</div>
     
-    <h4 class="name" id="isRGBInGamut"><span class="type-signature"></span>isRGBInGamut<span class="signature">(lrgb, ep<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Object</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Checks if an RGB color is within the gamut.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="floatToByte">
+        <a class="href-link" href="#floatToByte">#</a>
+        
+        <span class="code-name">
+            
+                floatToByte<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts a float value to a byte value.
+    </div>
+    
 
 
 
@@ -1916,106 +2892,175 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>lrgb</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
+            <th>Type</th>
 
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The linear RGB array.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>n</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The float value.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
 
     
 
-        <tr>
-            
-                <td class="name"><code>ep</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    GAMUT_EPSILON
-                
-                </td>
-            
-
-            <td class="description last">The epsilon value for comparison.</td>
-        </tr>
+    
 
     
-    </tbody>
-</table>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line185">line 185</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>- The byte value.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="gamutMapOKLCH">
+        <a class="href-link" href="#gamutMapOKLCH">#</a>
+        
+        <span class="code-name">
+            
+                gamutMapOKLCH<span class="signature">()</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Takes any OKLCH value and maps it to fall within the given gamut.
+    </div>
+    
+
+
+
+
+
+
+
 
 
 
@@ -2047,18 +3092,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line89">line 89</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="gamut.js.html" class="button">View Source</a>
+            <span>
+                <a href="gamut.js.html">gamut.js</a>, <a href="gamut.js.html#line262">line 262</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2076,49 +3122,35 @@
 
 
 
-<h5>Returns:</h5>
 
-        
-<div class="param-desc">
-    - True if the color is within the gamut, false otherwise.
+
+
+
+
+
 </div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
             
+                <div class="member">
 
+
+    
+    <h4 class="name" id="hexToRGB">
+        <a class="href-link" href="#hexToRGB">#</a>
+        
+        <span class="code-name">
+            
+                hexToRGB<span class="signature">(str, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+            
+        </span>
+    </h4>
     
 
     
-    <h4 class="name" id="lerp"><span class="type-signature"></span>lerp<span class="signature">(min, max, t)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
-
+    <div class="description">
+        Converts a hex color string to an RGB array.
+    </div>
     
-
-
-
-<div class="description">
-    Linearly interpolates between two values.
-</div>
 
 
 
@@ -2130,98 +3162,111 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>min</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+            <th>Type</th>
 
             
-            </td>
-
+            <th>Attributes</th>
             
 
             
+            <th>Default</th>
+            
 
-            <td class="description last">The start value.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>str</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The hex color string.</td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
 
-            
-
-            <td class="description last">The end value.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>t</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
 
-            
+      
 
-            <td class="description last">The interpolation factor between 0 and 1.</td>
-        </tr>
+      
+      </td>
+  
 
-    
-    </tbody>
-</table>
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
 
+  <td class="description last">The output array.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2252,18 +3297,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line19">line 19</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line58">line 58</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2281,49 +3327,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The interpolated value.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The RGB array.</div>
     
-    <h4 class="name" id="lerpAngle"><span class="type-signature"></span>lerpAngle<span class="signature">(a0, a1, t)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;number></code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Linearly interpolates between two angles.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="isRGBInGamut">
+        <a class="href-link" href="#isRGBInGamut">#</a>
+        
+        <span class="code-name">
+            
+                isRGBInGamut<span class="signature">(lrgb, ep<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Checks if an RGB color is within the gamut.
+    </div>
+    
 
 
 
@@ -2335,98 +3392,111 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>a0</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+            <th>Type</th>
 
             
-            </td>
-
+            <th>Attributes</th>
             
 
             
+            <th>Default</th>
+            
 
-            <td class="description last">The start angle in degrees.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>a1</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
+        <tbody>
+        
 
             
-            </td>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>lrgb</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The linear RGB array.</td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>ep</code></td>
+  
 
-            
-
-            <td class="description last">The end angle in degrees.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>t</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
 
-            
+      
 
-            <td class="description last">The interpolation factor between 0 and 1.</td>
-        </tr>
+      
+      </td>
+  
 
-    
-    </tbody>
-</table>
+  
+      <td class="default">
+      
+          GAMUT_EPSILON
+      
+      </td>
+  
 
+  <td class="description last">The epsilon value for comparison.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2457,18 +3527,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line200">line 200</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line99">line 99</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2486,49 +3557,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The interpolated angle in degrees.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- True if the color is within the gamut, false otherwise.</div>
     
-    <h4 class="name" id="radToDeg"><span class="type-signature"></span>radToDeg<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">boolean</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Converts radians to degrees.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="lerp">
+        <a class="href-link" href="#lerp">#</a>
+        
+        <span class="code-name">
+            
+                lerp<span class="signature">(min, max, t)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Linearly interpolates between two values.
+    </div>
+    
 
 
 
@@ -2540,52 +3622,104 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>n</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
+            <th>Type</th>
 
             
 
             
 
-            <td class="description last">The angle in radians.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-    </tbody>
-</table>
+        <tbody>
+        
 
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>min</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The start value.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>max</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The end value.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>t</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The interpolation factor between 0 and 1.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2616,18 +3750,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line35">line 35</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line21">line 21</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2645,159 +3780,60 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The angle in degrees.
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
+                    
 
+<div class="columns">
     
-
+    <div class='param-desc column is-7'>- The interpolated value.</div>
     
-    <h4 class="name" id="vec3"><span class="type-signature"></span>vec3<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
     
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
 
+
+    </div>
     
-
-
-
-<div class="description">
-    Creates a new vec3 array.
 </div>
 
+                
+        </div>
+    </div>
 
 
 
 
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line178">line 178</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - The vec3 array.
 </div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;number></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
             
+                <div class="member">
 
+
+    
+    <h4 class="name" id="lerpAngle">
+        <a class="href-link" href="#lerpAngle">#</a>
+        
+        <span class="code-name">
+            
+                lerpAngle<span class="signature">(a0, a1, t)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
     
 
     
-    <h4 class="name" id="xyY_to_XYZ"><span class="type-signature"></span>xyY_to_XYZ<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span></h4>
     
-
+    <div class="description">
+        Linearly interpolates between two angles.
+    </div>
     
-
-
-
-<div class="description">
-    Converts xyY color space to XYZ color space.
-</div>
 
 
 
@@ -2809,106 +3845,225 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>arg</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
+            <th>Type</th>
 
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
             
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last">The xyY array.</td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>a0</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The start angle in degrees.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>a1</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The end angle in degrees.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>t</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The interpolation factor between 0 and 1.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
 
     
 
-        <tr>
-            
-                <td class="name"><code>out</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;number></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    vec3()
-                
-                </td>
-            
-
-            <td class="description last">The output array.</td>
-        </tr>
+    
 
     
-    </tbody>
-</table>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line217">line 217</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>- The interpolated angle in degrees.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="listColorGamuts">
+        <a class="href-link" href="#listColorGamuts">#</a>
+        
+        <span class="code-name">
+            
+                listColorGamuts<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#ColorGamut">ColorGamut</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Returns a list of color gamuts.
+    </div>
+    
+
+
+
+
+
+
+
 
 
 
@@ -2940,18 +4095,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util.js.html">util.js</a>, <a href="util.js.html#line124">line 124</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="spaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="spaces.js.html">spaces.js</a>, <a href="spaces.js.html#line56">line 56</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2969,36 +4125,1920 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>An array of color gamut objects.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;<a href="global.html#ColorGamut">ColorGamut</a>></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="listColorSpaces">
+        <a class="href-link" href="#listColorSpaces">#</a>
+        
+        <span class="code-name">
+            
+                listColorSpaces<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#ColorSpace">ColorSpace</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Returns a list of color spaces.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="spaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="spaces.js.html">spaces.js</a>, <a href="spaces.js.html#line28">line 28</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>An array of color space objects.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;<a href="global.html#ColorSpace">ColorSpace</a>></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="parse">
+        <a class="href-link" href="#parse">#</a>
+        
+        <span class="code-name">
+            
+                parse<span class="signature">(input, targetSpace, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Parses a color string and converts it to the target color space.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The color string to parse.</td>
+</tr>
+
 
         
-<div class="param-desc">
-    - The XYZ array.
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>targetSpace</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorSpace">ColorSpace</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The target color space.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output vector.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;number></span>
 
 
-    </dd>
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line254">line 254</a>
+            </span>
+        </p>
+    
 </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The parsed and converted color.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="radToDeg">
+        <a class="href-link" href="#radToDeg">#</a>
+        
+        <span class="code-name">
+            
+                radToDeg<span class="signature">(n)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts radians to degrees.
+    </div>
     
 
 
 
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>n</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The angle in radians.</td>
+</tr>
 
 
         
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line39">line 39</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>- The angle in degrees.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="serialize">
+        <a class="href-link" href="#serialize">#</a>
+        
+        <span class="code-name">
+            
+                serialize<span class="signature">(input, inputSpace, outputSpace<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Serializes a color to a string representation.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The input color.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>inputSpace</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorSpace">ColorSpace</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The input color space.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>outputSpace</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorSpace">ColorSpace</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          inputSpace
+      
+      </td>
+  
+
+  <td class="description last">The output color space.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line116">line 116</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The serialized color string.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">string</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="transform">
+        <a class="href-link" href="#transform">#</a>
+        
+        <span class="code-name">
+            
+                transform<span class="signature">(input, matrix, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Transforms a color using a transformation matrix.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>input</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The input color.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>matrix</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Matrix3x3">Matrix3x3</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The transformation matrix.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output vector.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line91">line 91</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The transformed color.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="vec3">
+        <a class="href-link" href="#vec3">#</a>
+        
+        <span class="code-name">
+            
+                vec3<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Creates a new vec3 array.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line193">line 193</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>- The vec3 array.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;number></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="xyY_to_XYZ">
+        <a class="href-link" href="#xyY_to_XYZ">#</a>
+        
+        <span class="code-name">
+            
+                xyY_to_XYZ<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts xyY color space to XYZ color space.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>arg</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The xyY array.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Array.&lt;number></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output array.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="util.js.html" class="button">View Source</a>
+            <span>
+                <a href="util.js.html">util.js</a>, <a href="util.js.html#line136">line 136</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>- The XYZ array.</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">Array.&lt;number></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Type Definitions</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Object</code>
+
+
+    </span>
+
+<h4 class="name" id="ColorGamut">
+    <a class="href-link" href="#ColorGamut">#</a>
+    
+    <span class="code-name">
+        ColorGamut
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>space</code></td>
+    
+
+    <td class="type">
+    
+        
+<code class="param-type"><a href="global.html#ColorSpace">ColorSpace</a></code>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">the color space associated with this color gamut</td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line28">line 28</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Object</code>
+
+
+    </span>
+
+<h4 class="name" id="ColorSpace">
+    <a class="href-link" href="#ColorSpace">#</a>
+    
+    <span class="code-name">
+        ColorSpace
+    </span>
+    
+</h4>
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>id</code></td>
+    
+
+    <td class="type">
+    
+        
+<code class="param-type">String</code>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last">the unique identifier for this color space in lowercase</td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line23">line 23</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;Array.&lt;number>></code>
+
+
+    </span>
+
+<h4 class="name" id="Matrix3x3">
+    <a class="href-link" href="#Matrix3x3">#</a>
+    
+    <span class="code-name">
+        Matrix3x3
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    A 3x3 matrix represented as an array of arrays.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line5">line 5</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    
+        <pre class="prettyprint"><code>const matrix = [
+  [a, b, c],
+  [d, e, f],
+  [g, h, i]
+];</code></pre>
+    
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;number></code>
+
+
+    </span>
+
+<h4 class="name" id="Vector">
+    <a class="href-link" href="#Vector">#</a>
+    
+    <span class="code-name">
+        Vector
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    A n-dimensional vector represented as an array of numbers, typically in 3D (X, Y, Z).
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core.js.html" class="button">View Source</a>
+            <span>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line16">line 16</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    
+        <pre class="prettyprint"><code>const vec = [ x, y, z ];</code></pre>
+    
+
+
+</div>
+            
+            </div>
+        </div>
     
 
     
@@ -3009,19 +6049,26 @@
 
 
 
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Fri Dec 27 2024 10:31:57 GMT+0000 (Greenwich Mean Time)
-</footer>
-
-<script> prettyPrint(); </script>
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+
 </body>
 </html>

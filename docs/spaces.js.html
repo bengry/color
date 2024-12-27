@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> spaces.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -73,45 +75,77 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>spaces.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><p><code>@texel/color</code> is a minimal and modern color library for JavaScript. Especially useful for real-time applications, generative art, and graphics on the web.</p>
-<h2>Source Code</h2>
-<p>The source code is on GitHub:</p>
-<p><a href="https://github.com/texel-org/color">https://github.com/texel-org/color</a></p>
-<h2>Docs</h2>
-<p>The documentation is held here:</p>
-<p><a href="https://texel-org.github.io/color">https://texel-org.github.io/color</a></p>
-<h2>Usage</h2>
-<p>For installation and usage, see the <a href="https://github.com/texel-org/color/">README.md page</a> on the GitHub repository.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { XYZ, XYZD50 } from "./spaces/xyz.js";
+import { OKLab, OKLCH, OKHSV, OKHSL } from "./spaces/oklab.js";
+import { sRGB, sRGBLinear, sRGBGamut } from "./spaces/srgb.js";
+import {
+  DisplayP3,
+  DisplayP3Linear,
+  DisplayP3Gamut,
+} from "./spaces/display-p3.js";
+import { Rec2020, Rec2020Linear, Rec2020Gamut } from "./spaces/rec2020.js";
+import { A98RGB, A98RGBLinear, A98RGBGamut } from "./spaces/a98-rgb.js";
+import { ProPhotoRGB, ProPhotoRGBLinear } from "./spaces/prophoto-rgb.js";
+
+export * from "./spaces/xyz.js";
+export * from "./spaces/oklab.js";
+export * from "./spaces/srgb.js";
+export * from "./spaces/display-p3.js";
+export * from "./spaces/rec2020.js";
+export * from "./spaces/a98-rgb.js";
+export * from "./spaces/prophoto-rgb.js";
+
+/**
+ * Returns a list of color spaces.
+ *
+ * @method
+ * @returns {ColorSpace[]} An array of color space objects.
+ * @category core
+ */
+export const listColorSpaces = () => {
+  return [
+    XYZ, // D65
+    XYZD50,
+    OKLab,
+    OKLCH,
+    OKHSV,
+    OKHSL,
+    sRGB,
+    sRGBLinear,
+    DisplayP3,
+    DisplayP3Linear,
+    Rec2020,
+    Rec2020Linear,
+    A98RGB,
+    A98RGBLinear,
+    ProPhotoRGB,
+    ProPhotoRGBLinear,
+  ];
+};
+
+/**
+ * Returns a list of color gamuts.
+ *
+ * @method
+ * @returns {ColorGamut[]} An array of color gamut objects.
+ * @category core
+ */
+export const listColorGamuts = () => {
+  return [sRGBGamut, DisplayP3Gamut, Rec2020Gamut, A98RGBGamut];
+};
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

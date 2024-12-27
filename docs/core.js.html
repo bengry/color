@@ -1,4 +1,91 @@
-import { clamp, floatToByte, hexToRGB, vec3 } from "./util.js";
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> core.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li></ul></div><div class="category"><h2>core</h2><h3>Global</h3><ul><li><a href="global.html#convert">convert</a></li><li><a href="global.html#deltaEOK">deltaEOK</a></li><li><a href="global.html#deserialize">deserialize</a></li><li><a href="global.html#listColorGamuts">listColorGamuts</a></li><li><a href="global.html#listColorSpaces">listColorSpaces</a></li><li><a href="global.html#parse">parse</a></li><li><a href="global.html#serialize">serialize</a></li></ul></div><div class="category"><h2>math</h2><h3>Global</h3><ul><li><a href="global.html#OKLab_from">OKLab_from</a></li><li><a href="global.html#OKLab_to">OKLab_to</a></li><li><a href="global.html#transform">transform</a></li></ul></div><div class="category"><h2>utils</h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>core.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { clamp, floatToByte, hexToRGB, vec3 } from "./util.js";
 import { LMS_to_OKLab_M, OKLab_to_LMS_M } from "./conversion_matrices.js";
 import { listColorSpaces, sRGB, XYZ } from "./spaces.js";
 
@@ -146,7 +233,7 @@ export const serialize = (input, inputSpace, outputSpace = inputSpace) => {
 };
 
 const stripAlpha = (coords) => {
-  if (coords.length >= 4 && coords[3] === 1) return coords.slice(0, 3);
+  if (coords.length >= 4 &amp;&amp; coords[3] === 1) return coords.slice(0, 3);
   return coords;
 };
 
@@ -188,9 +275,9 @@ export const deserialize = (input) => {
       throw new Error(`could not parse color string ${input}`);
     }
     const fn = parts[1].toLowerCase();
-    if (/^rgba?$/i.test(fn) && parts[2].includes(",")) {
+    if (/^rgba?$/i.test(fn) &amp;&amp; parts[2].includes(",")) {
       const coords = parts[2].split(",").map((v, i) => {
-        return parseColorValue(v.trim(), i < 3);
+        return parseColorValue(v.trim(), i &lt; 3);
       });
       return {
         id: "srgb",
@@ -230,9 +317,9 @@ export const deserialize = (input) => {
       }
 
       const coords = coordsStrings.map((f, i) => {
-        return parseColorValue(f.trim(), div255 && i < 3);
+        return parseColorValue(f.trim(), div255 &amp;&amp; i &lt; 3);
       });
-      if (coords.length < 3 || coords.length > 4)
+      if (coords.length &lt; 3 || coords.length > 4)
         throw new Error(`invalid number of coordinates`);
       return {
         id,
@@ -267,7 +354,7 @@ export const parse = (input, targetSpace, out = vec3()) => {
   // store alpha
   if (alpha !== 1) out[3] = alpha;
   // reduce to 3D
-  if (alpha == 1 && out.length === 4) out.pop();
+  if (alpha == 1 &amp;&amp; out.length === 4) out.pop();
   return out;
 };
 
@@ -367,7 +454,7 @@ export const convert = (input, fromSpace, toSpace, out = vec3()) => {
         }
       }
 
-      // Then, adapt D50 <-> D65 if we need to
+      // Then, adapt D50 &lt;-> D65 if we need to
       if (fromBaseSpace.adapt) {
         out = transform(out, fromBaseSpace.adapt.to, out);
       }
@@ -417,3 +504,33 @@ export const deltaEOK = (oklab1, oklab2) => {
   let db = oklab1[2] - oklab2[2];
   return Math.sqrt(dL * dL + da * da + db * db);
 };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

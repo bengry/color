@@ -1,7 +1,10 @@
 {
-  "plugins": [],
   "source": {
     "include": ["src"]
   },
-  "sourceType": "module"
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": ["category", "subcategory"]
+  },
+  "plugins": ["node_modules/better-docs/category"]
 }
