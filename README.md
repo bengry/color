@@ -75,6 +75,12 @@ context.fillRect(0,0, canvas.width, canvas.height);
 
 ## API
 
+Auto-generated documentation with all exposed methods can be found here:
+
+[https://texel-org.github.io/color](https://texel-org.github.io/color)
+
+The methods are described in more details below.
+
 #### `output = convert(coords, fromSpace, toSpace, output = [0, 0, 0])`
 
 Converts the `coords` (typically `[r,g,b]` or `[l,c,h]` or similar), expected to be in `fromSpace`, to the specified `toSpace`. The from and to spaces are one of the [spaces](#color-spaces) interfaces.
