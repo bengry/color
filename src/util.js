@@ -1,15 +1,48 @@
-const GAMUT_EPSILON = 0.000075;
-
+/**
+ * Clamps a value between a minimum and maximum value.
+ * @param {number} value - The value to clamp.
+ * @param {number} min - The minimum value.
+ * @param {number} max - The maximum value.
+ * @returns {number} - The clamped value.
+ */
 export const clamp = (value, min, max) => Math.max(Math.min(value, max), min);
 
+/**
+ * Linearly interpolates between two values.
+ * @param {number} min - The start value.
+ * @param {number} max - The end value.
+ * @param {number} t - The interpolation factor between 0 and 1.
+ * @returns {number} - The interpolated value.
+ */
 export const lerp = (min, max, t) => min * (1 - t) + max * t;
 
+/**
+ * Converts degrees to radians.
+ * @param {number} n - The angle in degrees.
+ * @returns {number} - The angle in radians.
+ */
 export const degToRad = (n) => (n * Math.PI) / 180;
 
+/**
+ * Converts radians to degrees.
+ * @param {number} n - The angle in radians.
+ * @returns {number} - The angle in degrees.
+ */
 export const radToDeg = (n) => (n * 180) / Math.PI;
 
+/**
+ * Constrains an angle to the range [0, 360).
+ * @param {number} angle - The angle in degrees.
+ * @returns {number} - The constrained angle.
+ */
 export const constrainAngle = (angle) => ((angle % 360) + 360) % 360;
 
+/**
+ * Converts a hex color string to an RGB array.
+ * @param {string} str - The hex color string.
+ * @param {number[]} [out=vec3()] - The output array.
+ * @returns {number[]} - The RGB array.
+ */
 export const hexToRGB = (str, out = vec3()) => {
   let hex = str.replace(/#/, "");
   if (hex.length === 3) {
@@ -26,12 +59,25 @@ export const hexToRGB = (str, out = vec3()) => {
   return out;
 };
 
+/**
+ * Converts an RGB array to a hex color string.
+ * @param {number[]} rgb - The RGB array.
+ * @returns {string} - The hex color string.
+ */
 export const RGBToHex = (rgb) =>
   `#${rgb.map((n) => floatToByte(n).toString(16).padStart(2, "0")).join("")}`;
 
-/** @deprecated use RGBToHex */
+/**
+ * @deprecated Use RGBToHex instead.
+ */
 export const RGBtoHex = RGBToHex;
 
+/**
+ * Checks if an RGB color is within the gamut.
+ * @param {number[]} lrgb - The linear RGB array.
+ * @param {number} [ep=GAMUT_EPSILON] - The epsilon value for comparison.
+ * @returns {boolean} - True if the color is within the gamut, false otherwise.
+ */
 export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
   const r = lrgb[0];
   const g = lrgb[1];
@@ -46,6 +92,12 @@ export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
   );
 };
 
+/**
+ * Clamps an RGB array to the range [0, 1].
+ * @param {number[]} rgb - The RGB array.
+ * @param {number[]} [out=vec3()] - The output array.
+ * @returns {number[]} - The clamped RGB array.
+ */
 export const clampedRGB = (rgb, out = vec3()) => {
   out[0] = clamp(rgb[0], 0, 1);
   out[1] = clamp(rgb[1], 0, 1);
@@ -53,6 +105,12 @@ export const clampedRGB = (rgb, out = vec3()) => {
   return out;
 };
 
+/**
+ * Converts xyY color space to XYZ color space.
+ * @param {number[]} arg - The xyY array.
+ * @param {number[]} [out=vec3()] - The output array.
+ * @returns {number[]} - The XYZ array.
+ */
 export const xyY_to_XYZ = (arg, out = vec3()) => {
   let X, Y, Z, x, y;
   x = arg[0];
@@ -70,6 +128,12 @@ export const xyY_to_XYZ = (arg, out = vec3()) => {
   return out;
 };
 
+/**
+ * Converts XYZ color space to xyY color space.
+ * @param {number[]} arg - The XYZ array.
+ * @param {number[]} [out=vec3()] - The output array.
+ * @returns {number[]} - The xyY array.
+ */
 export const XYZ_to_xyY = (arg, out = vec3()) => {
   let sum, X, Y, Z;
   X = arg[0];
@@ -87,29 +151,35 @@ export const XYZ_to_xyY = (arg, out = vec3()) => {
   return out;
 };
 
+/**
+ * Converts a float value to a byte value.
+ * @param {number} n - The float value.
+ * @returns {number} - The byte value.
+ */
 export const floatToByte = (n) => clamp(Math.round(255 * n), 0, 255);
 
-// Undocumented
-
+/**
+ * Creates a new vec3 array.
+ * @returns {number[]} - The vec3 array.
+ */
 export const vec3 = () => [0, 0, 0];
 
-// export const normalizeHue = (hue) => ((hue = hue % 360) < 0 ? hue + 360 : hue);
-
-// in degrees
-// export const angle_delta = (angle1, angle2) => {
-//   const diff = ((angle2 - angle1 + 180) % 360) - 180;
-//   return diff < -180 ? diff + 360 : diff;
-// };
-
-// function shortAngleDistRad(a0, a1) {
-//   var max = Math.PI * 2;
-//   var da = (a1 - a0) % max;
-//   return ((2 * da) % max) - da;
-// }
-
+/**
+ * Calculates the delta angle between two angles.
+ * @param {number} a0 - The first angle in degrees.
+ * @param {number} a1 - The second angle in degrees.
+ * @returns {number} - The delta angle in degrees.
+ */
 export const deltaAngle = (a0, a1) => {
   var da = (a1 - a0) % 360;
   return ((2 * da) % 360) - da;
 };
 
+/**
+ * Linearly interpolates between two angles.
+ * @param {number} a0 - The start angle in degrees.
+ * @param {number} a1 - The end angle in degrees.
+ * @param {number} t - The interpolation factor between 0 and 1.
+ * @returns {number} - The interpolated angle in degrees.
+ */
 export const lerpAngle = (a0, a1, t) => a0 + deltaAngle(a0, a1) * t;
