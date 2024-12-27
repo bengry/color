@@ -73,13 +73,13 @@ context.fillStyle = color;
 context.fillRect(0,0, canvas.width, canvas.height);
 ```
 
-## API
+## Documentation
 
 Auto-generated documentation with all exposed methods can be found here:
 
 [https://texel-org.github.io/color](https://texel-org.github.io/color)
 
-The methods are described in more details below.
+## API Deetails
 
 #### `output = convert(coords, fromSpace, toSpace, output = [0, 0, 0])`
 
