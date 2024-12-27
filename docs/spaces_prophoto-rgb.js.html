@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> spaces/prophoto-rgb.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>core</h2><h3>Global</h3><ul><li><a href="global.html#convert">convert</a></li><li><a href="global.html#deltaEOK">deltaEOK</a></li><li><a href="global.html#deserialize">deserialize</a></li><li><a href="global.html#listColorGamuts">listColorGamuts</a></li><li><a href="global.html#listColorSpaces">listColorSpaces</a></li><li><a href="global.html#parse">parse</a></li><li><a href="global.html#serialize">serialize</a></li><li><a href="global.html#transform">transform</a></li></ul></div><div class="category"><h2>gamuts</h2><h3>Global</h3><ul><li><a href="global.html#A98RGBGamut">A98RGBGamut</a></li><li><a href="global.html#DisplayP3Gamut">DisplayP3Gamut</a></li><li><a href="global.html#Rec2020Gamut">Rec2020Gamut</a></li><li><a href="global.html#sRGBGamut">sRGBGamut</a></li></ul></div><div class="category"><h2>mapping</h2><h3>Global</h3><ul><li><a href="global.html#MapToAdaptiveCuspL">MapToAdaptiveCuspL</a></li><li><a href="global.html#MapToAdaptiveGray">MapToAdaptiveGray</a></li><li><a href="global.html#MapToCuspL">MapToCuspL</a></li><li><a href="global.html#MapToGray">MapToGray</a></li><li><a href="global.html#MapToL">MapToL</a></li><li><a href="global.html#computeMaxSaturationOKLC">computeMaxSaturationOKLC</a></li><li><a href="global.html#findCuspOKLCH">findCuspOKLCH</a></li><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li><li><a href="global.html#getGamutLMStoRGB">getGamutLMStoRGB</a></li></ul></div><div class="category"><h2>oklab</h2><h3>Global</h3><ul><li><a href="global.html#OKHSLToOKLab">OKHSLToOKLab</a></li><li><a href="global.html#OKHSVToOKLab">OKHSVToOKLab</a></li><li><a href="global.html#OKLabToOKHSL">OKLabToOKHSL</a></li><li><a href="global.html#OKLabToOKHSV">OKLabToOKHSV</a></li><li><a href="global.html#OKLab_from">OKLab_from</a></li><li><a href="global.html#OKLab_to">OKLab_to</a></li></ul></div><div class="category"><h2>rgb</h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#sRGBGammaToLinear">sRGBGammaToLinear</a></li><li><a href="global.html#sRGBLinearToGamma">sRGBLinearToGamma</a></li></ul></div><div class="category"><h2>spaces</h2><h3>Global</h3><ul><li><a href="global.html#A98RGB">A98RGB</a></li><li><a href="global.html#A98RGBLinear">A98RGBLinear</a></li><li><a href="global.html#DisplayP3">DisplayP3</a></li><li><a href="global.html#DisplayP3Linear">DisplayP3Linear</a></li><li><a href="global.html#OKHSL">OKHSL</a></li><li><a href="global.html#OKHSV">OKHSV</a></li><li><a href="global.html#OKLCH">OKLCH</a></li><li><a href="global.html#OKLab">OKLab</a></li><li><a href="global.html#ProPhotoRGB">ProPhotoRGB</a></li><li><a href="global.html#ProPhotoRGBLinear">ProPhotoRGBLinear</a></li><li><a href="global.html#Rec2020">Rec2020</a></li><li><a href="global.html#Rec2020Linear">Rec2020Linear</a></li><li><a href="global.html#XYZ">XYZ</a></li><li><a href="global.html#XYZD50">XYZD50</a></li><li><a href="global.html#sRGB">sRGB</a></li><li><a href="global.html#sRGBLinear">sRGBLinear</a></li></ul></div><div class="category"><h2>utils</h2><h3>Global</h3><ul><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li></ul></div><div class="category"><h2>xyz</h2><h3>Global</h3><ul><li><a href="global.html#XYZD50ToD65">XYZD50ToD65</a></li><li><a href="global.html#XYZD65ToD50">XYZD65ToD50</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>spaces/prophoto-rgb.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { vec3 } from "../util.js";
+import {
+  linear_ProPhotoRGB_to_XYZ_M,
+  XYZ_to_linear_ProPhotoRGB_M,
+} from "../conversion_matrices.js";
+import { D50_to_D65_M, D65_to_D50_M } from "./xyz.js";
+
+const Et = 1 / 512;
+const Et2 = 16 / 512;
+
+// Transfer curve is gamma 1.8 with a small linear portion
+const ProPhotoRGBToLinear = (v) => (v &lt; Et2 ? v / 16 : v ** 1.8);
+const ProPhotoRGBToGamma = (v) => (v >= Et ? v ** (1 / 1.8) : 16 * v);
+
+// Note: below is a possibly improved transfer function proposed by CSS Module 4 spec
+// It is currently not matching the outputs of Colorjs.io when dealing with particular
+// negative values, such as convert([1,1,1], OKLab, ProPhotoRGB)
+
+// const ProPhotoRGBToLinear = (val) => {
+//   // convert an array of prophoto-rgb values
+//   // where in-gamut colors are in the range [0.0 - 1.0]
+//   // to linear light (un-companded) form.
+//   // Transfer curve is gamma 1.8 with a small linear portion
+//   let sign = val &lt; 0 ? -1 : 1;
+//   let abs = Math.abs(val);
+//   return abs &lt;= Et2 ? val / 16 : sign * Math.pow(abs, 1.8);
+// };
+
+// const ProPhotoRGBToGamma = (val) => {
+//   // convert an array of linear-light prophoto-rgb  in the range 0.0-1.0
+//   // to gamma corrected form
+//   // Transfer curve is gamma 1.8 with a small linear portion
+//   let sign = val &lt; 0 ? -1 : 1;
+//   let abs = Math.abs(val);
+//   return abs >= Et ? sign * Math.pow(abs, 1 / 1.8) : 16 * val;
+// };
+
+/**
+ * The ProPhotoRGB color space in linear form, without a transfer function, aliased as &lt;code>"prophoto-rgb-linear"&lt;/code>.
+ * @type {ColorSpace}
+ * @category spaces
+ */
+export const ProPhotoRGBLinear = {
+  id: "prophoto-rgb-linear",
+  adapt: {
+    // chromatic adaptation to and from D65
+    to: D50_to_D65_M,
+    from: D65_to_D50_M,
+  },
+  // Note these are in D50
+  toXYZ_M: linear_ProPhotoRGB_to_XYZ_M,
+  fromXYZ_M: XYZ_to_linear_ProPhotoRGB_M,
+};
+
+/**
+ * The ProPhotoRGB color space, with a transfer function, aliased as &lt;code>"prophoto-rgb"&lt;/code>. Inherits from the {@link ProPhotoRGBLinear} color space.
+ * @type {ColorSpace}
+ * @category spaces
+ */
+export const ProPhotoRGB = {
+  id: "prophoto-rgb",
+  base: ProPhotoRGBLinear,
+  toBase: (vec, out = vec3()) => {
+    out[0] = ProPhotoRGBToLinear(vec[0]);
+    out[1] = ProPhotoRGBToLinear(vec[1]);
+    out[2] = ProPhotoRGBToLinear(vec[2]);
+    return out;
+  },
+  fromBase: (vec, out = vec3()) => {
+    out[0] = ProPhotoRGBToGamma(vec[0]);
+    out[1] = ProPhotoRGBToGamma(vec[1]);
+    out[2] = ProPhotoRGBToGamma(vec[2]);
+    return out;
+  },
+};
+
+// Note: this is currently not supported, some overflows are occurring
+// in the python script. Please file an issue or PR if you think you can help.
+// export const ProPhotoRGBGamut = {
+//   space: ProPhotoRGB,
+//   coefficients: OKLab_to_linear_ProPhotoRGB_coefficients,
+// };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>
