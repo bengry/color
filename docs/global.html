@@ -66,7 +66,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li></ul></div><div class="category"><h2>core</h2><h3>Global</h3><ul><li><a href="global.html#convert">convert</a></li><li><a href="global.html#deltaEOK">deltaEOK</a></li><li><a href="global.html#deserialize">deserialize</a></li><li><a href="global.html#listColorGamuts">listColorGamuts</a></li><li><a href="global.html#listColorSpaces">listColorSpaces</a></li><li><a href="global.html#parse">parse</a></li><li><a href="global.html#serialize">serialize</a></li></ul></div><div class="category"><h2>math</h2><h3>Global</h3><ul><li><a href="global.html#OKLab_from">OKLab_from</a></li><li><a href="global.html#OKLab_to">OKLab_to</a></li><li><a href="global.html#transform">transform</a></li></ul></div><div class="category"><h2>utils</h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#MapToL">MapToL</a></li><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li></ul></div><div class="category"><h2>core</h2><h3>Global</h3><ul><li><a href="global.html#convert">convert</a></li><li><a href="global.html#deltaEOK">deltaEOK</a></li><li><a href="global.html#deserialize">deserialize</a></li><li><a href="global.html#listColorGamuts">listColorGamuts</a></li><li><a href="global.html#listColorSpaces">listColorSpaces</a></li><li><a href="global.html#parse">parse</a></li><li><a href="global.html#serialize">serialize</a></li><li><a href="global.html#transform">transform</a></li></ul></div><div class="category"><h2>oklab</h2><h3>Global</h3><ul><li><a href="global.html#OKHSLToOKLab">OKHSLToOKLab</a></li><li><a href="global.html#OKHSVToOKLab">OKHSVToOKLab</a></li><li><a href="global.html#OKLabToOKHSL">OKLabToOKHSL</a></li><li><a href="global.html#OKLabToOKHSV">OKLabToOKHSV</a></li><li><a href="global.html#OKLab_from">OKLab_from</a></li><li><a href="global.html#OKLab_to">OKLab_to</a></li></ul></div><div class="category"><h2>utils</h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul></div>
                 
             </nav>
         </div>
@@ -150,11 +150,1183 @@
     
 
     
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type"><a href="global.html#GamutMapping">GamutMapping</a></code>
+
+
+    </span>
+
+<h4 class="name" id="MapToL">
+    <a class="href-link" href="#MapToL">#</a>
+    
+        
+            <span class='tag'>constant</span>
+        
+    
+    <span class="code-name">
+        MapToL
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    MapToL a <a href="global.html#GamutMapping">GamutMapping</a> function that maintains the color's Lightness.
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="gamut.js.html" class="button">View Source</a>
+            <span>
+                <a href="gamut.js.html">gamut.js</a>, <a href="gamut.js.html#line25">line 25</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
 
     
         <div class='vertical-section'>
             <h1>Methods</h1>
             <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OKHSLToOKLab">
+        <a class="href-link" href="#OKHSLToOKLab">#</a>
+        
+        <span class="code-name">
+            
+                OKHSLToOKLab<span class="signature">(hsl, gamut<span class="signature-attributes">opt</span>, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts OKHSL color to OKLab color.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>hsl</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The OKHSL color as an array [h, s, l].</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>gamut</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorGamut">ColorGamut</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          sRGBGamut
+      
+      </td>
+  
+
+  <td class="description last">The color gamut.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output array to store the OKLab color.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="okhsl.js.html" class="button">View Source</a>
+            <span>
+                <a href="okhsl.js.html">okhsl.js</a>, <a href="okhsl.js.html#line129">line 129</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The OKLab color as an array [L, a, b].</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OKHSVToOKLab">
+        <a class="href-link" href="#OKHSVToOKLab">#</a>
+        
+        <span class="code-name">
+            
+                OKHSVToOKLab<span class="signature">(hsv, gamut<span class="signature-attributes">opt</span>, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts OKHSV color to OKLab color.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>hsv</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The OKHSV color as an array [h, s, v].</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>gamut</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorGamut">ColorGamut</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          sRGBGamut
+      
+      </td>
+  
+
+  <td class="description last">The color gamut.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output array to store the OKLab color.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="okhsl.js.html" class="button">View Source</a>
+            <span>
+                <a href="okhsl.js.html">okhsl.js</a>, <a href="okhsl.js.html#line267">line 267</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The OKLab color as an array [L, a, b].</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OKLabToOKHSL">
+        <a class="href-link" href="#OKLabToOKHSL">#</a>
+        
+        <span class="code-name">
+            
+                OKLabToOKHSL<span class="signature">(lab, gamut<span class="signature-attributes">opt</span>, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts OKLab color to OKHSL color.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>lab</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The OKLab color as an array [L, a, b].</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>gamut</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorGamut">ColorGamut</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          sRGBGamut
+      
+      </td>
+  
+
+  <td class="description last">The color gamut.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output array to store the OKHSL color.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="okhsl.js.html" class="button">View Source</a>
+            <span>
+                <a href="okhsl.js.html">okhsl.js</a>, <a href="okhsl.js.html#line194">line 194</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The OKHSL color as an array [h, s, l].</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OKLabToOKHSV">
+        <a class="href-link" href="#OKLabToOKHSV">#</a>
+        
+        <span class="code-name">
+            
+                OKLabToOKHSV<span class="signature">(lab, gamut<span class="signature-attributes">opt</span>, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        Converts OKLab color to OKHSV color.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>lab</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+      </td>
+  
+
+  <td class="description last">The OKLab color as an array [L, a, b].</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>gamut</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#ColorGamut">ColorGamut</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          sRGBGamut
+      
+      </td>
+  
+
+  <td class="description last">The color gamut.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>out</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          vec3()
+      
+      </td>
+  
+
+  <td class="description last">The output array to store the OKHSV color.</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="okhsl.js.html" class="button">View Source</a>
+            <span>
+                <a href="okhsl.js.html">okhsl.js</a>, <a href="okhsl.js.html#line331">line 331</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'>The OKHSV color as an array [h, s, v].</div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
             
                 <div class="member">
 
@@ -752,7 +1924,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -841,7 +2013,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The hex color string.</div>
+    <div class='param-desc column is-7'>The hex color string.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -967,7 +2139,7 @@
         
         <span class="code-name">
             
-                XYZ_to_xyY<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+                XYZ_to_xyY<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
             
         </span>
     </h4>
@@ -1024,7 +2196,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -1061,7 +2233,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -1166,13 +2338,13 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The xyY array.</div>
+    <div class='param-desc column is-7'>The xyY array.</div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
     </div>
@@ -1389,7 +2561,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The clamped value.</div>
+    <div class='param-desc column is-7'>The clamped value.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -1420,7 +2592,7 @@
         
         <span class="code-name">
             
-                clampedRGB<span class="signature">(rgb, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+                clampedRGB<span class="signature">(rgb, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
             
         </span>
     </h4>
@@ -1477,7 +2649,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -1514,7 +2686,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -1619,13 +2791,13 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The clamped RGB array.</div>
+    <div class='param-desc column is-7'>The clamped RGB array.</div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
     </div>
@@ -1792,7 +2964,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The constrained angle.</div>
+    <div class='param-desc column is-7'>The constrained angle.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -2065,7 +3237,7 @@
         <p class="tag-source">
             <a href="core.js.html" class="button">View Source</a>
             <span>
-                <a href="core.js.html">core.js</a>, <a href="core.js.html#line284">line 284</a>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line294">line 294</a>
             </span>
         </p>
     
@@ -2269,7 +3441,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The angle in radians.</div>
+    <div class='param-desc column is-7'>The angle in radians.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -2467,7 +3639,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The delta angle in degrees.</div>
+    <div class='param-desc column is-7'>The delta angle in degrees.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -2634,7 +3806,7 @@
         <p class="tag-source">
             <a href="core.js.html" class="button">View Source</a>
             <span>
-                <a href="core.js.html">core.js</a>, <a href="core.js.html#line414">line 414</a>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line424">line 424</a>
             </span>
         </p>
     
@@ -2705,7 +3877,8 @@
     
     
     <div class="description">
-        Deserializes a color string to an object with color space and coordinates.
+        Deserializes a color string to an object with <code>id</code> (color space string) and <code>coords</code> (the vector, in 3 or 4 dimensions).
+Note this does not return a <code>ColorSpace</code> object; you may want to use the example code below to map the string ID to a <code>ColorSpace</code>, but this will increase the size of your final bundle as it references all spaces.
     </div>
     
 
@@ -2807,7 +3980,7 @@
         <p class="tag-source">
             <a href="core.js.html" class="button">View Source</a>
             <span>
-                <a href="core.js.html">core.js</a>, <a href="core.js.html#line170">line 170</a>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line180">line 180</a>
             </span>
         </p>
     
@@ -2856,6 +4029,18 @@
     </div>
 
 
+
+
+    <h5>Example</h5>
+    
+    
+        <pre class="prettyprint"><code>import { listColorSpaces, deserialize } from "@texel/color";
+
+const { id, coords } = deserialize(str);
+// now find the actual color space object
+const space = listColorSpaces().find((f) => id === f.id);
+console.log(space, coords);</code></pre>
+    
 
 
 </div>
@@ -3011,7 +4196,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The byte value.</div>
+    <div class='param-desc column is-7'>The byte value.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -3102,7 +4287,7 @@
         <p class="tag-source">
             <a href="gamut.js.html" class="button">View Source</a>
             <span>
-                <a href="gamut.js.html">gamut.js</a>, <a href="gamut.js.html#line262">line 262</a>
+                <a href="gamut.js.html">gamut.js</a>, <a href="gamut.js.html#line272">line 272</a>
             </span>
         </p>
     
@@ -3139,7 +4324,7 @@
         
         <span class="code-name">
             
-                hexToRGB<span class="signature">(str, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+                hexToRGB<span class="signature">(str, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
             
         </span>
     </h4>
@@ -3233,7 +4418,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -3338,13 +4523,13 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The RGB array.</div>
+    <div class='param-desc column is-7'>The RGB array.</div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
     </div>
@@ -3426,7 +4611,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -3568,7 +4753,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- True if the color is within the gamut, false otherwise.</div>
+    <div class='param-desc column is-7'>True if the color is within the gamut, false otherwise.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -3791,7 +4976,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The interpolated value.</div>
+    <div class='param-desc column is-7'>The interpolated value.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -4014,7 +5199,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The interpolated angle in degrees.</div>
+    <div class='param-desc column is-7'>The interpolated angle in degrees.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -4494,7 +5679,7 @@
         <p class="tag-source">
             <a href="core.js.html" class="button">View Source</a>
             <span>
-                <a href="core.js.html">core.js</a>, <a href="core.js.html#line254">line 254</a>
+                <a href="core.js.html">core.js</a>, <a href="core.js.html#line264">line 264</a>
             </span>
         </p>
     
@@ -4698,7 +5883,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The angle in degrees.</div>
+    <div class='param-desc column is-7'>The angle in degrees.</div>
     
     
     <div class='column is-5 has-text-left'>
@@ -4738,7 +5923,7 @@
     
     
     <div class="description">
-        Serializes a color to a string representation.
+        Serializes a color to a CSS color string.
     </div>
     
 
@@ -5005,7 +6190,7 @@
     
     
     <div class="description">
-        Transforms a color using a transformation matrix.
+        Transforms a color vector by the specified 3x3 transformation matrix.
     </div>
     
 
@@ -5263,7 +6448,7 @@
         
         <span class="code-name">
             
-                vec3<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+                vec3<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
             
         </span>
     </h4>
@@ -5354,13 +6539,13 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The vec3 array.</div>
+    <div class='param-desc column is-7'>The vec3 array.</div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
     </div>
@@ -5385,7 +6570,7 @@
         
         <span class="code-name">
             
-                xyY_to_XYZ<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;number>}</span>
+                xyY_to_XYZ<span class="signature">(arg, out<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Vector">Vector</a>}</span>
             
         </span>
     </h4>
@@ -5442,7 +6627,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -5479,7 +6664,7 @@
   <td class="type">
   
       
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
   
@@ -5584,13 +6769,13 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>- The XYZ array.</div>
+    <div class='param-desc column is-7'>The XYZ array.</div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<code class="param-type">Array.&lt;number></code>
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
 
 
     </div>
@@ -5858,6 +7043,154 @@
         </p>
     
 </dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="GamutMapping">
+        <a class="href-link" href="#GamutMapping">#</a>
+        
+        <span class="code-name">
+            
+                GamutMapping<span class="signature">(oklch)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        A function that maps an OKLCH color to a lightness value.
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>oklch</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#Vector">Vector</a></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The input OKLCH color</td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="gamut.js.html" class="button">View Source</a>
+            <span>
+                <a href="gamut.js.html">gamut.js</a>, <a href="gamut.js.html#line15">line 15</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

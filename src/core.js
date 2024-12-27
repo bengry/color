@@ -51,12 +51,12 @@ const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 
 /**
  * Converts OKLab color to another color space.
- * @param {Vector} OKLab - The OKLab color.
- * @param {Matrix3x3} LMS_to_output - The transformation matrix from LMS to the output color space.
- * @param {Vector} [out=vec3()] - The output vector.
+ * @param {Vector} OKLab The OKLab color.
+ * @param {Matrix3x3} LMS_to_output The transformation matrix from LMS to the output color space.
+ * @param {Vector} [out=vec3()] The output vector.
  * @returns {Vector} The transformed color.
  * @method
- * @category math
+ * @category oklab
  */
 export const OKLab_to = (OKLab, LMS_to_output, out = vec3()) => {
   transform(OKLab, OKLab_to_LMS_M, out);
@@ -66,12 +66,12 @@ export const OKLab_to = (OKLab, LMS_to_output, out = vec3()) => {
 
 /**
  * Converts a color from another color space to OKLab.
- * @param {Vector} input - The input color.
- * @param {Matrix3x3} input_to_LMS - The transformation matrix from the input color space to LMS.
- * @param {Vector} [out=vec3()] - The output vector.
+ * @param {Vector} input The input color.
+ * @param {Matrix3x3} input_to_LMS The transformation matrix from the input color space to LMS.
+ * @param {Vector} [out=vec3()] The output vector.
  * @returns {Vector} The transformed color.
  * @method
- * @category math
+ * @category oklab
  */
 export const OKLab_from = (input, input_to_LMS, out = vec3()) => {
   transform(input, input_to_LMS, out);
@@ -80,13 +80,13 @@ export const OKLab_from = (input, input_to_LMS, out = vec3()) => {
 };
 
 /**
- * Transforms a color using a transformation matrix.
- * @param {Vector} input - The input color.
- * @param {Matrix3x3} matrix - The transformation matrix.
- * @param {Vector} [out=vec3()] - The output vector.
+ * Transforms a color vector by the specified 3x3 transformation matrix.
+ * @param {Vector} input The input color.
+ * @param {Matrix3x3} matrix The transformation matrix.
+ * @param {Vector} [out=vec3()] The output vector.
  * @returns {Vector} The transformed color.
  * @method
- * @category math
+ * @category core
  */
 export const transform = (input, matrix, out = vec3()) => {
   const x = dot3(input, matrix[0]);
@@ -105,10 +105,10 @@ const vec3Copy = (input, output) => {
 };
 
 /**
- * Serializes a color to a string representation.
- * @param {Vector} input - The input color.
- * @param {ColorSpace} inputSpace - The input color space.
- * @param {ColorSpace} [outputSpace=inputSpace] - The output color space.
+ * Serializes a color to a CSS color string.
+ * @param {Vector} input The input color.
+ * @param {ColorSpace} inputSpace The input color space.
+ * @param {ColorSpace} [outputSpace=inputSpace] The output color space.
  * @returns {string} The serialized color string.
  * @method
  * @category core
@@ -161,8 +161,18 @@ const parseColorValue = (str, is255 = false) => {
 };
 
 /**
- * Deserializes a color string to an object with color space and coordinates.
- * @param {string} input - The color string to deserialize.
+ * Deserializes a color string to an object with <code>id</code> (color space string) and <code>coords</code> (the vector, in 3 or 4 dimensions).
+ * Note this does not return a <code>ColorSpace</code> object; you may want to use the example code below to map the string ID to a <code>ColorSpace</code>, but this will increase the size of your final bundle as it references all spaces.
+ *
+ * @example
+ * import { listColorSpaces, deserialize } from "@texel/color";
+ *
+ * const { id, coords } = deserialize(str);
+ * // now find the actual color space object
+ * const space = listColorSpaces().find((f) => id === f.id);
+ * console.log(space, coords);
+ *
+ * @param {string} input The color string to deserialize.
  * @returns {{id: string, coords: Vector}} The deserialized color object.
  * @method
  * @category core
@@ -244,9 +254,9 @@ export const deserialize = (input) => {
 
 /**
  * Parses a color string and converts it to the target color space.
- * @param {string} input - The color string to parse.
- * @param {ColorSpace} targetSpace - The target color space.
- * @param {Vector} [out=vec3()] - The output vector.
+ * @param {string} input The color string to parse.
+ * @param {ColorSpace} targetSpace The target color space.
+ * @param {Vector} [out=vec3()] The output vector.
  * @returns {Vector} The parsed and converted color.
  * @method
  * @category core
@@ -273,10 +283,10 @@ export const parse = (input, targetSpace, out = vec3()) => {
 
 /**
  * Converts a color from one color space to another.
- * @param {Vector} input - The input color.
- * @param {ColorSpace} fromSpace - The source color space.
- * @param {ColorSpace} toSpace - The target color space.
- * @param {Vector} [out=vec3()] - The output vector.
+ * @param {Vector} input The input color.
+ * @param {ColorSpace} fromSpace The source color space.
+ * @param {ColorSpace} toSpace The target color space.
+ * @param {Vector} [out=vec3()] The output vector.
  * @returns {Vector} The converted color.
  * @method
  * @category core
@@ -405,8 +415,8 @@ export const convert = (input, fromSpace, toSpace, out = vec3()) => {
 
 /**
  * Calculates the DeltaEOK (color difference) between two OKLab colors.
- * @param {Vector} oklab1 - The first OKLab color.
- * @param {Vector} oklab2 - The second OKLab color.
+ * @param {Vector} oklab1 The first OKLab color.
+ * @param {Vector} oklab2 The second OKLab color.
  * @returns {number} The delta E value.
  * @method
  * @category core

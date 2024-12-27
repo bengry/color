@@ -12,9 +12,32 @@ import { OKLab_to, convert } from "./core.js";
 
 const DEFAULT_ALPHA = 0.05;
 
+/**
+ * @typedef {function} GamutMapping
+ * @description A function that maps an OKLCH color to a lightness value.
+ * @param {Vector} oklch The input OKLCH color
+ * @param {number[]} cusp A 2D cusp point in the form [L, C]
+ */
+
+/**
+ * A {@link GamutMapping} function that maintains the color's lightness.
+ * @type {GamutMapping}
+ */
 export const MapToL = (oklch) => oklch[0];
+/**
+ * A {@link GamutMapping} function that maps towards middle gray (L = 0.5).
+ * @type {GamutMapping}
+ */
 export const MapToGray = () => 0.5;
+/**
+ * A {@link GamutMapping} function that maps towards the lightness of the current hue's cusp.
+ * @type {GamutMapping}
+ */
 export const MapToCuspL = (_, cusp) => cusp[0];
+/**
+ * A {@link GamutMapping} function that adaptively maps towards gray.
+ * @type {GamutMapping}
+ */
 export const MapToAdaptiveGray = (oklch, cusp) => {
   const Ld = oklch[0] - cusp[0];
   const k = 2 * (Ld > 0 ? 1 - cusp[0] : cusp[0]);
@@ -24,7 +47,10 @@ export const MapToAdaptiveGray = (oklch, cusp) => {
     0.5 * (Math.sign(Ld) * (e1 - Math.sqrt(e1 * e1 - 2 * k * Math.abs(Ld))))
   );
 };
-
+/**
+ * A {@link GamutMapping} function that adaptively maps towards the cusp's lightness.
+ * @type {GamutMapping}
+ */
 export const MapToAdaptiveCuspL = (oklch) => {
   const Ld = oklch[0] - 0.5;
   const e1 = 0.5 + Math.abs(Ld) + DEFAULT_ALPHA * oklch[1];

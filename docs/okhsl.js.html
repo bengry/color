@@ -1,4 +1,91 @@
-import { vec3, constrainAngle as constrain } from "./util.js";
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> okhsl.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#MapToL">MapToL</a></li><li><a href="global.html#gamutMapOKLCH">gamutMapOKLCH</a></li></ul></div><div class="category"><h2>core</h2><h3>Global</h3><ul><li><a href="global.html#convert">convert</a></li><li><a href="global.html#deltaEOK">deltaEOK</a></li><li><a href="global.html#deserialize">deserialize</a></li><li><a href="global.html#listColorGamuts">listColorGamuts</a></li><li><a href="global.html#listColorSpaces">listColorSpaces</a></li><li><a href="global.html#parse">parse</a></li><li><a href="global.html#serialize">serialize</a></li><li><a href="global.html#transform">transform</a></li></ul></div><div class="category"><h2>oklab</h2><h3>Global</h3><ul><li><a href="global.html#OKHSLToOKLab">OKHSLToOKLab</a></li><li><a href="global.html#OKHSVToOKLab">OKHSVToOKLab</a></li><li><a href="global.html#OKLabToOKHSL">OKLabToOKHSL</a></li><li><a href="global.html#OKLabToOKHSV">OKLabToOKHSV</a></li><li><a href="global.html#OKLab_from">OKLab_from</a></li><li><a href="global.html#OKLab_to">OKLab_to</a></li></ul></div><div class="category"><h2>utils</h2><h3>Global</h3><ul><li><a href="global.html#RGBToHex">RGBToHex</a></li><li><a href="global.html#RGBtoHex">RGBtoHex</a></li><li><a href="global.html#XYZ_to_xyY">XYZ_to_xyY</a></li><li><a href="global.html#clamp">clamp</a></li><li><a href="global.html#clampedRGB">clampedRGB</a></li><li><a href="global.html#constrainAngle">constrainAngle</a></li><li><a href="global.html#degToRad">degToRad</a></li><li><a href="global.html#deltaAngle">deltaAngle</a></li><li><a href="global.html#floatToByte">floatToByte</a></li><li><a href="global.html#hexToRGB">hexToRGB</a></li><li><a href="global.html#isRGBInGamut">isRGBInGamut</a></li><li><a href="global.html#lerp">lerp</a></li><li><a href="global.html#lerpAngle">lerpAngle</a></li><li><a href="global.html#radToDeg">radToDeg</a></li><li><a href="global.html#vec3">vec3</a></li><li><a href="global.html#xyY_to_XYZ">xyY_to_XYZ</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>okhsl.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { vec3, constrainAngle as constrain } from "./util.js";
 import { OKLab_to } from "./core.js";
 import { sRGBGamut } from "./spaces.js";
 import {
@@ -55,7 +142,7 @@ const computeStMid = (a, b, out) => {
   // Returns a smooth approximation of the location of the cusp.
   //
   // This polynomial was created by an optimization process.
-  // It has been designed so that S_mid < S_max and T_mid < T_max.
+  // It has been designed so that S_mid &lt; S_max and T_mid &lt; T_max.
 
   let s =
     0.11516993 +
@@ -136,7 +223,7 @@ export const OKHSLToOKLab = (hsl, gamut = sRGBGamut, out = vec3()) => {
   let b = 0;
   h = constrain(h) / 360.0;
 
-  if (L !== 0.0 && L !== 1.0 && s !== 0) {
+  if (L !== 0.0 &amp;&amp; L !== 1.0 &amp;&amp; s !== 0) {
     let a_ = Math.cos(tau * h);
     let b_ = Math.sin(tau * h);
 
@@ -157,7 +244,7 @@ export const OKHSLToOKLab = (hsl, gamut = sRGBGamut, out = vec3()) => {
     let midInv = 1.25;
     let t, k0, k1, k2;
 
-    if (s < mid) {
+    if (s &lt; mid) {
       t = midInv * s;
       k0 = 0.0;
       k1 = mid * c0;
@@ -206,7 +293,7 @@ export const OKLabToOKHSL = (lab, gamut = sRGBGamut, out = vec3()) => {
   let c = Math.sqrt(lab[1] ** 2 + lab[2] ** 2);
   let h = 0.5 + Math.atan2(-lab[2], -lab[1]) / tau;
 
-  if (l !== 0.0 && l !== 1.0 && c !== 0) {
+  if (l !== 0.0 &amp;&amp; l !== 1.0 &amp;&amp; c !== 0) {
     let a_ = lab[1] / c;
     let b_ = lab[2] / c;
 
@@ -220,7 +307,7 @@ export const OKLabToOKHSL = (lab, gamut = sRGBGamut, out = vec3()) => {
     let midInv = 1.25;
     let k0, k1, k2, t;
 
-    if (c < cMid) {
+    if (c &lt; cMid) {
       k1 = mid * c0;
       k2 = 1.0 - k1 / cMid;
 
@@ -236,8 +323,8 @@ export const OKLabToOKHSL = (lab, gamut = sRGBGamut, out = vec3()) => {
     }
   }
 
-  const achromatic = Math.abs(s) < εS;
-  if (achromatic || l === 0.0 || Math.abs(1 - l) < εL) {
+  const achromatic = Math.abs(s) &lt; εS;
+  if (achromatic || l === 0.0 || Math.abs(1 - l) &lt; εL) {
     // Due to floating point imprecision near lightness of 1, we can end up
     // with really high around white, this is to provide consistency as
     // saturation can be really high for white due this imprecision.
@@ -277,7 +364,7 @@ export const OKHSVToOKLab = (hsv, gamut = sRGBGamut, out = vec3()) => {
   let b = 0;
 
   // Avoid processing gray or colors with undefined hues
-  if (l !== 0.0 && s !== 0.0) {
+  if (l !== 0.0 &amp;&amp; s !== 0.0) {
     let a_ = Math.cos(tau * h);
     let b_ = Math.sin(tau * h);
 
@@ -340,7 +427,7 @@ export const OKLabToOKHSV = (lab, gamut = sRGBGamut, out = vec3()) => {
   let c = Math.sqrt(lab[1] ** 2 + lab[2] ** 2);
   let h = 0.5 + Math.atan2(-lab[2], -lab[1]) / tau;
 
-  if (l !== 0.0 && l !== 1 && c !== 0.0) {
+  if (l !== 0.0 &amp;&amp; l !== 1 &amp;&amp; c !== 0.0) {
     let a_ = lab[1] / c;
     let b_ = lab[2] / c;
 
@@ -372,7 +459,7 @@ export const OKLabToOKHSV = (lab, gamut = sRGBGamut, out = vec3()) => {
   }
 
   // unlike colorjs.io, we are not worknig with none-types
-  // if (Math.abs(s) < ε || v === 0.0) {
+  // if (Math.abs(s) &lt; ε || v === 0.0) {
   //   h = null;
   // }
 
@@ -383,3 +470,33 @@ export const OKLabToOKHSV = (lab, gamut = sRGBGamut, out = vec3()) => {
   out[2] = v;
   return out;
 };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

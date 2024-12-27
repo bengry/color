@@ -1,10 +1,10 @@
 /**
  * Clamps a value between a minimum and maximum value.
  * @method
- * @param {number} value - The value to clamp.
- * @param {number} min - The minimum value.
- * @param {number} max - The maximum value.
- * @returns {number} - The clamped value.
+ * @param {number} value The value to clamp.
+ * @param {number} min The minimum value.
+ * @param {number} max The maximum value.
+ * @returns {number} The clamped value.
  * @category utils
  */
 export const clamp = (value, min, max) => Math.max(Math.min(value, max), min);
@@ -12,10 +12,10 @@ export const clamp = (value, min, max) => Math.max(Math.min(value, max), min);
 /**
  * Linearly interpolates between two values.
  * @method
- * @param {number} min - The start value.
- * @param {number} max - The end value.
- * @param {number} t - The interpolation factor between 0 and 1.
- * @returns {number} - The interpolated value.
+ * @param {number} min The start value.
+ * @param {number} max The end value.
+ * @param {number} t The interpolation factor between 0 and 1.
+ * @returns {number} The interpolated value.
  * @category utils
  */
 export const lerp = (min, max, t) => min * (1 - t) + max * t;
@@ -23,8 +23,8 @@ export const lerp = (min, max, t) => min * (1 - t) + max * t;
 /**
  * Converts degrees to radians.
  * @method
- * @param {number} n - The angle in degrees.
- * @returns {number} - The angle in radians.
+ * @param {number} n The angle in degrees.
+ * @returns {number} The angle in radians.
  * @category utils
  */
 export const degToRad = (n) => (n * Math.PI) / 180;
@@ -32,8 +32,8 @@ export const degToRad = (n) => (n * Math.PI) / 180;
 /**
  * Converts radians to degrees.
  * @method
- * @param {number} n - The angle in radians.
- * @returns {number} - The angle in degrees.
+ * @param {number} n The angle in radians.
+ * @returns {number} The angle in degrees.
  * @category utils
  */
 export const radToDeg = (n) => (n * 180) / Math.PI;
@@ -41,8 +41,8 @@ export const radToDeg = (n) => (n * 180) / Math.PI;
 /**
  * Constrains an angle to the range [0, 360).
  * @method
- * @param {number} angle - The angle in degrees.
- * @returns {number} - The constrained angle.
+ * @param {number} angle The angle in degrees.
+ * @returns {number} The constrained angle.
  * @category utils
  */
 export const constrainAngle = (angle) => ((angle % 360) + 360) % 360;
@@ -50,9 +50,9 @@ export const constrainAngle = (angle) => ((angle % 360) + 360) % 360;
 /**
  * Converts a hex color string to an RGB array.
  * @method
- * @param {string} str - The hex color string.
- * @param {number[]} [out=vec3()] - The output array.
- * @returns {number[]} - The RGB array.
+ * @param {string} str The hex color string.
+ * @param {Vector} [out=vec3()] The output array.
+ * @returns {Vector} The RGB array.
  * @category utils
  */
 export const hexToRGB = (str, out = vec3()) => {
@@ -74,8 +74,8 @@ export const hexToRGB = (str, out = vec3()) => {
 /**
  * Converts an RGB array to a hex color string.
  * @method
- * @param {number[]} rgb - The RGB array.
- * @returns {string} - The hex color string.
+ * @param {Vector} rgb The RGB array.
+ * @returns {string} The hex color string.
  * @category utils
  */
 export const RGBToHex = (rgb) =>
@@ -91,9 +91,9 @@ export const RGBtoHex = RGBToHex;
 /**
  * Checks if an RGB color is within the gamut.
  * @method
- * @param {number[]} lrgb - The linear RGB array.
- * @param {number} [ep=GAMUT_EPSILON] - The epsilon value for comparison.
- * @returns {boolean} - True if the color is within the gamut, false otherwise.
+ * @param {Vector} lrgb The linear RGB array.
+ * @param {number} [ep=GAMUT_EPSILON] The epsilon value for comparison.
+ * @returns {boolean} True if the color is within the gamut, false otherwise.
  * @category utils
  */
 export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
@@ -113,9 +113,9 @@ export const isRGBInGamut = (lrgb, ep = GAMUT_EPSILON) => {
 /**
  * Clamps an RGB array to the range [0, 1].
  * @method
- * @param {number[]} rgb - The RGB array.
- * @param {number[]} [out=vec3()] - The output array.
- * @returns {number[]} - The clamped RGB array.
+ * @param {Vector} rgb The RGB array.
+ * @param {Vector} [out=vec3()] The output array.
+ * @returns {Vector} The clamped RGB array.
  * @category utils
  */
 export const clampedRGB = (rgb, out = vec3()) => {
@@ -128,9 +128,9 @@ export const clampedRGB = (rgb, out = vec3()) => {
 /**
  * Converts xyY color space to XYZ color space.
  * @method
- * @param {number[]} arg - The xyY array.
- * @param {number[]} [out=vec3()] - The output array.
- * @returns {number[]} - The XYZ array.
+ * @param {Vector} arg The xyY array.
+ * @param {Vector} [out=vec3()] The output array.
+ * @returns {Vector} The XYZ array.
  * @category utils
  */
 export const xyY_to_XYZ = (arg, out = vec3()) => {
@@ -153,9 +153,9 @@ export const xyY_to_XYZ = (arg, out = vec3()) => {
 /**
  * Converts XYZ color space to xyY color space.
  * @method
- * @param {number[]} arg - The XYZ array.
- * @param {number[]} [out=vec3()] - The output array.
- * @returns {number[]} - The xyY array.
+ * @param {Vector} arg The XYZ array.
+ * @param {Vector} [out=vec3()] The output array.
+ * @returns {Vector} The xyY array.
  * @category utils
  */
 export const XYZ_to_xyY = (arg, out = vec3()) => {
@@ -178,8 +178,8 @@ export const XYZ_to_xyY = (arg, out = vec3()) => {
 /**
  * Converts a float value to a byte value.
  * @method
- * @param {number} n - The float value.
- * @returns {number} - The byte value.
+ * @param {number} n The float value.
+ * @returns {number} The byte value.
  * @category utils
  */
 export const floatToByte = (n) => clamp(Math.round(255 * n), 0, 255);
@@ -187,7 +187,7 @@ export const floatToByte = (n) => clamp(Math.round(255 * n), 0, 255);
 /**
  * Creates a new vec3 array.
  * @method
- * @returns {number[]} - The vec3 array.
+ * @returns {Vector} The vec3 array.
  * @category utils
  */
 export const vec3 = () => [0, 0, 0];
@@ -195,9 +195,9 @@ export const vec3 = () => [0, 0, 0];
 /**
  * Calculates the delta angle between two angles.
  * @method
- * @param {number} a0 - The first angle in degrees.
- * @param {number} a1 - The second angle in degrees.
- * @returns {number} - The delta angle in degrees.
+ * @param {number} a0 The first angle in degrees.
+ * @param {number} a1 The second angle in degrees.
+ * @returns {number} The delta angle in degrees.
  * @category utils
  */
 export const deltaAngle = (a0, a1) => {
@@ -208,10 +208,10 @@ export const deltaAngle = (a0, a1) => {
 /**
  * Linearly interpolates between two angles.
  * @method
- * @param {number} a0 - The start angle in degrees.
- * @param {number} a1 - The end angle in degrees.
- * @param {number} t - The interpolation factor between 0 and 1.
- * @returns {number} - The interpolated angle in degrees.
+ * @param {number} a0 The start angle in degrees.
+ * @param {number} a1 The end angle in degrees.
+ * @param {number} t The interpolation factor between 0 and 1.
+ * @returns {number} The interpolated angle in degrees.
  * @category utils
  */
 export const lerpAngle = (a0, a1, t) => a0 + deltaAngle(a0, a1) * t;
